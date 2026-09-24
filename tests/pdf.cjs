@@ -1,0 +1,18 @@
+const fs=require('node:fs'),vm=require('node:vm'),path=require('node:path'),assert=require('node:assert/strict');
+const root=path.resolve(__dirname,'..');
+const {jsPDF}=require('../vendor/jspdf.umd.min.js'),report=require('../pdf-report.js'),scoring=require('../scoring.js');
+const c={window:{}};vm.runInNewContext(fs.readFileSync(path.join(root,'questions.js'),'utf8'),c);
+const questions=c.window.QUESTIONS,topics=c.window.TOPICS;
+const assets={regular:fs.readFileSync(path.join(root,'assets/fonts/PlusJakartaSans-Regular.ttf')).toString('base64'),bold:fs.readFileSync(path.join(root,'assets/fonts/PlusJakartaSans-Bold.ttf')).toString('base64'),shield:fs.readFileSync(path.join(root,'assets/ifr-shield.jpg')).toString('base64')};
+const state={name:'Prueba visual de resultados',group:'Sexto cuatrimestre',finished:'2026-09-24T12:00:00Z',answers:{},issues:{}};
+questions.forEach((q,i)=>{state.answers[q.id]=q.pairs?Object.fromEntries(q.pairs.map((p,i)=>[i,p[1]])):q.items?Object.fromEntries(q.items.map((p,i)=>[i,p.category])):q.tokens?q.tokens.map((_,i)=>i):q.answers?.[0]??q.answer;if(i%4===0){if(q.pairs||q.items)state.answers[q.id][0]='Respuesta incorrecta';else if(!q.tokens)state.answers[q.id]='Respuesta de prueba';}});
+state.issues['t3-dictation']=true;
+const totals={points:0,review:1,topics:topics.map(()=>({score:0,pending:0}))};questions.forEach(q=>{if(q.audio&&state.issues[q.id])totals.topics[q.topic-1].pending++;else{const p=scoring.grade(q,state.answers[q.id]);totals.points+=p;totals.topics[q.topic-1].score+=p;}});totals.percentage=totals.points/45*100;
+let doc=report.build({jsPDF,state,questions,topics,scoring,totals,assets});
+assert(doc.getFontList().Jakarta.includes('normal'));assert(doc.getNumberOfPages()>2);
+if(process.argv[2])fs.writeFileSync(process.argv[2],Buffer.from(doc.output('arraybuffer')));
+state.name='Nombre largo '.repeat(8);state.answers['t1-fill']='PALABRALARGA'.repeat(45);state.answers['t2-correction']='Respuesta extensa con acentos: evaluación, inglés. '.repeat(40);
+doc=report.build({jsPDF,state,questions,topics,scoring,totals,assets});
+if(process.argv[3])fs.writeFileSync(process.argv[3],Buffer.from(doc.output('arraybuffer')));
+assert(doc.getNumberOfPages()>2);
+console.log('PASS: embedded Jakarta/shield, mixed results, partial/pending, long responses and multi-page export.');

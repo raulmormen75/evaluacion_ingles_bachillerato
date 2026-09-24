@@ -419,7 +419,7 @@ window.QUESTIONS = [
     "topic": 3,
     "type": "short",
     "prompt": "¿Qué palabra empieza con el mismo sonido que «chair»: «school», «cheese» o «house»? Escribe la palabra.",
-    "explain": "Chair y cheese empiezan con el sonido /tʃ/. School empieza con /sk/ y house con /h/.",
+    "explain": "Chair y cheese empiezan con el mismo sonido. School y house tienen sonidos iniciales distintos.",
     "tag": "Sonido inicial",
     "answers": [
       "cheese"
