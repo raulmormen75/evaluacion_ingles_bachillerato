@@ -21,12 +21,12 @@
     {
       "id": "t2-dictation",
       "text": "B. E. D.",
-      "seconds": 4.246
+      "seconds": 5.259
     },
     {
       "id": "t2-listening",
       "text": "E. V. A.",
-      "seconds": 4.118
+      "seconds": 5.237
     },
     {
       "id": "t3-dictation",
@@ -61,17 +61,17 @@
     {
       "id": "t2-match-1",
       "text": "J. A. N. E.",
-      "seconds": 5.336
+      "seconds": 7.155
     },
     {
       "id": "t2-match-2",
       "text": "S. A. R. A.",
-      "seconds": 5.293
+      "seconds": 7.155
     },
     {
       "id": "t2-match-3",
       "text": "M. I. K. E.",
-      "seconds": 5.4
+      "seconds": 7.197
     }
   ]
 }

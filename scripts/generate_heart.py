@@ -8,6 +8,7 @@ from kokoro_onnx import Kokoro
 
 root = Path(__file__).resolve().parents[1]
 model_dir = Path(sys.argv[1])
+refresh_spelling = '--refresh-spelling' in sys.argv[2:]
 engine = Kokoro(str(model_dir / 'kokoro-v1.0.onnx'), str(model_dir / 'voices-v1.0.bin'))
 source = (root / 'questions.js').read_text(encoding='utf-8')
 questions = json.loads(source.split('window.QUESTIONS = ', 1)[1].strip().removesuffix(';'))
@@ -23,15 +24,18 @@ for name, text in jobs:
                't2-match-1': ['dʒˈeɪ', 'ˈeɪ', 'ˈɛn', 'ˈiː'],
                't2-match-2': ['ˈɛs', 'ˈeɪ', 'ˈɑːɹ', 'ˈeɪ'],
                't2-match-3': ['ˈɛm', 'ˈaɪ', 'kˈeɪ', 'ˈiː']}
-    if (out / (name + '.wav')).exists():
+    if (out / (name + '.wav')).exists() and not (refresh_spelling and name in letters):
         info = sf.info(out / (name + '.wav'))
         manifest['clips'].append({'id': name, 'text': text, 'seconds': round(info.duration, 3)})
         continue
     if name in letters:
         parts = []
-        for phonemes in letters[name]:
-            samples, rate = engine.create(phonemes, voice='af_heart', speed=0.9, lang='en-us', is_phonemes=True)
-            parts.extend([samples, np.zeros(int(rate * .45), dtype=np.float32)])
+        for index, phonemes in enumerate(letters[name]):
+            # A sentence ending gives each isolated letter its own completed intonation.
+            samples, rate = engine.create(phonemes + '.', voice='af_heart', speed=0.8, lang='en-us', is_phonemes=True)
+            parts.append(samples)
+            if index < len(letters[name]) - 1:
+                parts.append(np.zeros(rate, dtype=np.float32))
         samples = np.concatenate(parts)
     else:
         samples, rate = engine.create(text, voice='af_heart', speed=0.9, lang='en-us')

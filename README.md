@@ -24,7 +24,7 @@ Prueba de calificación: `node tests/scoring.cjs`.
 
 Voz sintética femenina estadounidense Heart (`af_heart`), generada localmente con Kokoro v1.0 y kokoro-onnx 0.6.1. Los catorce WAV se sirven desde `assets/audio`: diez audios individuales, tres deletreos del ejercicio de relacionar y una prueba. No hay API de pago, claves ni dependencia de voces instaladas. Los botones permiten reproducir, escuchar a 0.5x y detener; la reproducción comienza con una interacción del alumno.
 
-Fuentes: https://huggingface.co/hexgrad/Kokoro-82M (modelo Apache 2.0), https://github.com/thewh1teagle/kokoro-onnx (herramienta MIT). El modelo y las dependencias de generación no se distribuyen con el sitio. `scripts/generate_heart.py` permite regenerar los WAV proporcionando una carpeta con `kokoro-v1.0.onnx` y `voices-v1.0.bin`. Entorno local: `kokoro-onnx==0.6.1`, `soundfile==0.14.0`. Los nombres de las letras se generan por separado con pausas.
+Fuentes: https://huggingface.co/hexgrad/Kokoro-82M (modelo Apache 2.0), https://github.com/thewh1teagle/kokoro-onnx (herramienta MIT). El modelo y las dependencias de generación no se distribuyen con el sitio. `scripts/generate_heart.py` permite regenerar los WAV proporcionando una carpeta con `kokoro-v1.0.onnx` y `voices-v1.0.bin`. Entorno local: `kokoro-onnx==0.6.1`, `soundfile==0.14.0`. Las letras se generan individualmente a velocidad 0.8, con cierre de frase y un segundo de silencio añadido entre ellas. Para regenerar solo los deletreos usa --refresh-spelling.
 
 ## Datos y evaluación individual
 
