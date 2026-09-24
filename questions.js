@@ -95,14 +95,13 @@ window.QUESTIONS = [
     "id": "t1-short",
     "topic": 1,
     "type": "short",
-    "prompt": "Tu personaje se llama Eva. Responde «What is your name?» con una oración que empiece con «My name» o «I».",
-    "explain": "My name is Eva e I am Eva son presentaciones válidas; también sus contracciones.",
+    "prompt": "Eva te saluda: «Good morning!». Respóndele en inglés con el saludo de la mañana.",
+    "explain": "Good morning permite responder al saludo de la mañana. Puedes añadir el nombre de Eva.",
     "tag": "Respuesta escrita",
     "answers": [
-      "My name is Eva",
-      "My name's Eva",
-      "I am Eva",
-      "I'm Eva"
+      "Good morning",
+      "Good morning Eva",
+      "Good morning, Eva"
     ]
   },
   {
@@ -458,7 +457,7 @@ window.QUESTIONS = [
     "id": "t4-fill",
     "topic": 4,
     "type": "fill",
-    "prompt": "Tu personaje tiene 17 años. Completa con el número escrito en inglés: I am ___ years old.",
+    "prompt": "Ana tiene 17 años. Completa su frase con el número en inglés: I am ___ years old.",
     "explain": "Diecisiete se escribe seventeen.",
     "tag": "Edad y números",
     "answers": [
@@ -535,18 +534,22 @@ window.QUESTIONS = [
     "id": "t4-short",
     "topic": 4,
     "type": "short",
-    "prompt": "Tu personaje tiene 20 años. Responde «How old are you?» con una oración que empiece con «I am» o su contracción. Puedes usar 20 o twenty.",
-    "explain": "Para la edad se usa I am o I’m; years old puede omitirse.",
+    "prompt": "Luis tiene 20 años. Responde en inglés: «How old is Luis?». Escribe una oración completa.",
+    "explain": "He is twenty years old indica la edad de Luis. También puedes usar su nombre, la contracción He’s o el número 20; years old puede omitirse.",
     "tag": "Respuesta con edad",
     "answers": [
-      "I am twenty years old",
-      "I'm twenty years old",
-      "I am 20 years old",
-      "I'm 20 years old",
-      "I am twenty",
-      "I'm twenty",
-      "I am 20",
-      "I'm 20"
+      "He is twenty years old",
+      "He's twenty years old",
+      "He is 20 years old",
+      "He's 20 years old",
+      "He is twenty",
+      "He's twenty",
+      "He is 20",
+      "He's 20",
+      "Luis is twenty years old",
+      "Luis is 20 years old",
+      "Luis is twenty",
+      "Luis is 20"
     ]
   },
   {
@@ -688,7 +691,7 @@ window.QUESTIONS = [
     "id": "t5-short",
     "topic": 5,
     "type": "short",
-    "prompt": "Tu personaje disfruta leer. Escribe una oración que empiece con «I like» y use el verbo read.",
+    "prompt": "Eva te pregunta: «What do you like to do?». Responde que te gusta leer. Empieza con «I like».",
     "explain": "Después de like se aceptan reading y to read para expresar este gusto.",
     "tag": "Respuesta sobre gustos",
     "answers": [
