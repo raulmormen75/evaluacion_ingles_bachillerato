@@ -283,7 +283,7 @@ window.QUESTIONS = [
     "id": "t2-correction",
     "topic": 2,
     "type": "correction",
-      "prompt": "Find the spelling mistake: \"The student writes in a notebok.\" Write only the corrected word.",
+      "prompt": "One word is spelled wrong. Write it correctly: \"The student writes in a notebok.\"",
       "explain": "La palabra correcta es «notebook»: se escribe con doble o en «book».",
       "tag": "Ortografía en contexto",
       "answers": [
