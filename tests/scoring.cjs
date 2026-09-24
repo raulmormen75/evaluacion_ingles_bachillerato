@@ -35,6 +35,9 @@ for(const answer of ['He’s twenty years old.', 'Luis is 20.'])assert.equal(sco
 for(const answer of ['I am twenty','He is twelve'])assert.equal(scoring.grade(age,answer),0);
 assert(questions.every(q=>!q.prompt.includes('Tu personaje')));
 const spelling=questions.find(q=>q.id==='t2-match');
+const wordDictation=questions.find(q=>q.id==='t2-dictation');
+assert.equal(scoring.grade(wordDictation,'Pencil.'),1);
+assert.equal(scoring.grade(wordDictation,'BED'),0);
 assert.equal(scoring.grade(spelling,{0:'Jane',1:'Sara',2:'Mike'}),1);
 assert.equal(scoring.grade(spelling,{0:'Jean',1:'Sarah',2:'Nick'}),0);
 assert.equal(scoring.grade(spelling,{0:'Jane',1:'Sarah',2:'Mike'}),2/3);

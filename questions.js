@@ -175,15 +175,12 @@ window.QUESTIONS = [
     "id": "t2-dictation",
     "topic": 2,
     "type": "dictation",
-    "prompt": "Escucha las tres letras y escríbelas en el mismo orden.",
-    "explain": "El deletreo corresponde a B, E y D.",
-    "tag": "Deletreo auditivo",
-    "audio": "B. E. D.",
+    "prompt": "Escucha y escribe la palabra en inglés.",
+    "explain": "Pencil significa lápiz y se escribe p-e-n-c-i-l.",
+    "tag": "Ortografía auditiva",
+    "audio": "Pencil.",
     "answers": [
-      "BED",
-      "B E D",
-      "B-E-D",
-      "B, E, D"
+      "pencil"
     ]
   },
   {

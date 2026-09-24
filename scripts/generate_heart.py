@@ -17,14 +17,16 @@ jobs += [(q['id'], q['audio']) for q in questions if q.get('audio')]
 jobs += [(clip['id'], clip['text']) for q in questions for clip in q.get('audioPairs', [])]
 out = root / 'assets' / 'audio'
 out.mkdir(parents=True, exist_ok=True)
+previous_path = out / 'manifest.json'
+previous = {clip['id']: clip['text'] for clip in json.loads(previous_path.read_text(encoding='utf-8'))['clips']} if previous_path.exists() else {}
 manifest = {'voice': 'af_heart', 'language': 'en-us', 'model': 'Kokoro v1.0', 'clips': []}
 for name, text in jobs:
     # Explicit letter-name phonemes prevent initials being read as abbreviations.
-    letters = {'t2-dictation': ['bˈiː', 'ˈiː', 'dˈiː'], 't2-listening': ['ˈiː', 'vˈiː', 'ˈeɪ'],
+    letters = {'t2-listening': ['ˈiː', 'vˈiː', 'ˈeɪ'],
                't2-match-1': ['dʒˈeɪ', 'ˈeɪ', 'ˈɛn', 'ˈiː'],
                't2-match-2': ['ˈɛs', 'ˈeɪ', 'ˈɑːɹ', 'ˈeɪ'],
                't2-match-3': ['ˈɛm', 'ˈaɪ', 'kˈeɪ', 'ˈiː']}
-    if (out / (name + '.wav')).exists() and not (refresh_spelling and name in letters):
+    if (out / (name + '.wav')).exists() and previous.get(name) == text and not (refresh_spelling and name in letters):
         info = sf.info(out / (name + '.wav'))
         manifest['clips'].append({'id': name, 'text': text, 'seconds': round(info.duration, 3)})
         continue
