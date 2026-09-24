@@ -349,7 +349,7 @@ window.QUESTIONS = [
     "id": "t3-dictation",
     "topic": 3,
     "type": "dictation",
-    "prompt": "Escucha y escribe la palabra inglesa.",
+    "prompt": "Escucha y escribe la palabra.",
     "explain": "Bus se escribe b-u-s; su vocal no suena como la u española.",
     "tag": "Discriminación auditiva",
     "audio": "Bus.",
