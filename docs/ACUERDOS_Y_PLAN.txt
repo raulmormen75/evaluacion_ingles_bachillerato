@@ -1,0 +1,57 @@
+EVALUACIÓN DE INGLÉS PARA BACHILLERATO
+Acuerdos y plan de construcción — 23 de septiembre de 2026
+
+OBJETIVO
+Aplicación web individual para alumnos de bachillerato, publicada en Vercel desde el repositorio raulmormen75/evaluacion_ingles_bachillerato. No requiere contratar una API de inteligencia artificial.
+
+FUENTE Y ALCANCE
+Material: https://ingles-bachillerato-diagnostico.vercel.app/
+Repositorio de referencia: raulmormen75/ingles_bachillerato_diagnostico.
+1. Saludos y expresiones básicas.
+2. El alfabeto en inglés.
+3. Vocales, consonantes y pronunciación básica (reconocimiento auditivo, no evaluación de la voz).
+4. Números.
+5. Cómo presentarte en inglés, hasta expresiones de tiempo incluidas: pronombres, to be, datos personales, singular/plural, forma base/infinitivo/gerundio, gustos, deseos, planes y metas.
+No incluir el tema 6 ni los posteriores.
+
+ESTRUCTURA CONFIRMADA
+45 ejercicios breves: 9 por cada uno de los 5 temas.
+Cada tema incluye un ejercicio de cada formato:
+1. Completar seleccionando recuadros.
+2. Completar escribiendo.
+3. Escuchar y transcribir.
+4. Escuchar y responder comprensión.
+5. Ordenar palabras o elementos según el tema.
+6. Relacionar elementos.
+7. Responder preguntas por escrito.
+8. Corregir errores.
+9. Clasificar elementos.
+Adaptar cada formato al tema sin introducir gramática no enseñada. Relacionar/clasificar: máximo tres elementos para mantener brevedad.
+Duración de diseño: aproximadamente 90 minutos, estimación no validada con alumnos. Sin límite automático ni cierre por tiempo. Sesión disponible de dos horas.
+
+INTERACCIÓN
+Diseño legible para celular y computadora, botones amplios, instrucciones en español. Contenido objetivo en inglés. Identificación por nombre y grupo, sin cuentas. Navegación libre antes de entregar. Mezclar ejercicios dentro de cada tema y opciones, conservando las respuestas al navegar o recargar. No mostrar correcciones durante el intento.
+
+AUDIOS
+Solo reproducción de texto a voz en inglés; sin micrófono, grabación o reconocimiento de voz del alumno. Las frases de dictado no se muestran durante el examen. Seleccionar una voz inglesa disponible, con prueba de audio inicial y velocidades normal/lenta. La calidad y disponibilidad dependen del dispositivo; no prometer la misma voz natural en todos. Si falla el audio, avisar y permitir registrar el problema para revisión del profesor, sin confundir fallo técnico con desconocimiento.
+
+CORRECCIÓN
+Un punto por ejercicio, 45 puntos posibles. En relacionar y clasificar, crédito proporcional por elemento. Calificación sobre 10 a partir del puntaje obtenido. Aceptar variantes previstas y contracciones válidas en contexto (I am / I'm, you are / you're). Normalizar espacios, mayúsculas y puntuación final cuando no son el objetivo. No aceptar contracciones gramaticalmente inválidas, por ejemplo Yes, I'm como respuesta completa.
+Usar respuestas breves acotadas por el enunciado para evitar calificar injustamente respuestas personales abiertas. No afirmar que las reglas equivalen a comprensión semántica por IA. Conservar respuestas originales para revisión docente.
+
+RESULTADO
+Cada alumno descarga su PDF; no hay panel ni envío automático al profesor. PDF con identificación, fecha, folio, puntaje y desglose por tema/reactivo. El alumno entrega el archivo al docente. Guardado local en el mismo navegador como recuperación, no almacenamiento central.
+
+LÍMITES
+Una aplicación estática no garantiza identidad, evita copia ni impide modificar resultados. Respuestas presentes en el código público. La aleatoriedad cambia el orden, no vuelve único el banco. Usar con supervisión docente. Los datos del alumno se quedan en el dispositivo y en el PDF; no subirlos al repositorio.
+
+PLAN DE CONSTRUCCIÓN
+1. Registrar acuerdos y preparar banco de 45 ejercicios basado en el material.
+2. Implementar nueve tipos de interacción y navegación accesible.
+3. Implementar calificación, variantes, audio y recuperación local.
+4. Implementar PDF descargable con resultado detallado.
+5. Verificar conteo, cobertura, corrección, navegación, vista móvil y PDF.
+6. Guardar código y documentación en GitHub; conectar/publicar en Vercel cuando el acceso lo permita.
+
+ESTADO AL CREAR ESTE DOCUMENTO
+Repositorio accesible y clonado. Banco de ejercicios e interfaz en construcción. Aplicación aún no verificada ni publicada. Actualizar el registro de avances al terminar cada etapa.
