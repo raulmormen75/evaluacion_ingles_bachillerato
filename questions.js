@@ -283,11 +283,11 @@ window.QUESTIONS = [
     "id": "t2-correction",
     "topic": 2,
     "type": "correction",
-    "prompt": "En «P, Q, S, S» la tercera letra es incorrecta. Escribe solo la letra que debe sustituirla.",
-    "explain": "Después de Q corresponde R; la secuencia es P, Q, R, S.",
-    "tag": "Corrección de secuencia",
-    "answers": [
-      "R"
+      "prompt": "Find the spelling mistake: \"The student writes in a notebok.\" Write only the corrected word.",
+      "explain": "La palabra correcta es «notebook»: se escribe con doble o en «book».",
+      "tag": "Ortografía en contexto",
+      "answers": [
+        "notebook"
     ]
   },
   {
