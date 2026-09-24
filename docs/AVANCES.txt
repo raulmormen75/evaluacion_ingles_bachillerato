@@ -1,0 +1,27 @@
+ESTADO DE LA BASE — 23 de septiembre de 2026
+
+IMPLEMENTADO
+- 45 ejercicios: cinco temas, nueve formatos por tema.
+- Nombre completo y cuatrimestre obligatorios al comenzar, incluidos en resultados y PDF individual.
+- Navegación libre, orden aleatorio, recuperación local y aviso si no se puede guardar.
+- Corrección por reglas, contracciones previstas y crédito parcial.
+- Audio estadounidense con selección/prueba de voz. Preferencia femenina sujeta al dispositivo.
+- PDF detallado, colores IFR, encabezados redondeados y crédito del Profesor Morales Mendoza Raul en cada página.
+- Interfaz adaptable, botones amplios y ordenar mediante toques.
+
+VERIFICADO
+- Sintaxis JavaScript.
+- Conteo 45, nueve temas/formato por bloque, respuestas correctas, vacías, contracciones y crédito parcial.
+- Simulación DOM: contestar los 45 ejercicios por sus controles, 45/45, reanudar, entregar y generar un PDF real.
+- Fallo de almacenamiento y rechazo de estado incompleto.
+La simulación DOM no sustituye una prueba visual ni prueba de voz en un dispositivo real.
+
+PENDIENTE
+- Revisión y ajustes del profesor antes de publicar.
+- Validación visual en navegador real y Android/iOS; el navegador de pruebas no estuvo disponible en el entorno.
+- Escuchar y validar voz femenina estadounidense en los dispositivos del grupo.
+- Comprobar descarga PDF y saltos de página visualmente.
+- Conectar/publicar en Vercel cuando termine la revisión docente. No se ha desplegado esta aplicación.
+
+ÚLTIMO AJUSTE
+Cuatrimestre obligatorio mediante desplegable: Sexto cuatrimestre o Tercer cuatrimestre. Nombre y selección aparecen en el PDF.

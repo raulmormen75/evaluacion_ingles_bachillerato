@@ -26,11 +26,11 @@ Cada tema incluye un ejercicio de cada formato:
 7. Responder preguntas por escrito.
 8. Corregir errores.
 9. Clasificar elementos.
-Adaptar cada formato al tema sin introducir gramática no enseñada. Relacionar/clasificar: máximo tres elementos para mantener brevedad.
+Adaptar cada formato al tema sin introducir gramática no enseñada. Relacionar/clasificar: tres o cuatro elementos para mantener brevedad.
 Duración de diseño: aproximadamente 90 minutos, estimación no validada con alumnos. Sin límite automático ni cierre por tiempo. Sesión disponible de dos horas.
 
 INTERACCIÓN
-Diseño legible para celular y computadora, botones amplios, instrucciones en español. Contenido objetivo en inglés. Identificación por nombre y grupo, sin cuentas. Navegación libre antes de entregar. Mezclar ejercicios dentro de cada tema y opciones, conservando las respuestas al navegar o recargar. No mostrar correcciones durante el intento.
+Diseño legible para celular y computadora, botones amplios, instrucciones en español. Contenido objetivo en inglés. Identificación por nombre completo y cuatrimestre, sin cuentas. Navegación libre antes de entregar. Mezclar ejercicios dentro de cada tema y opciones, conservando las respuestas al navegar o recargar. No mostrar correcciones durante el intento.
 
 AUDIOS
 Solo reproducción de texto a voz en inglés; sin micrófono, grabación o reconocimiento de voz del alumno. Las frases de dictado no se muestran durante el examen. Seleccionar una voz inglesa disponible, con prueba de audio inicial y velocidades normal/lenta. La calidad y disponibilidad dependen del dispositivo; no prometer la misma voz natural en todos. Si falla el audio, avisar y permitir registrar el problema para revisión del profesor, sin confundir fallo técnico con desconocimiento.
@@ -55,3 +55,12 @@ PLAN DE CONSTRUCCIÓN
 
 ESTADO AL CREAR ESTE DOCUMENTO
 Repositorio accesible y clonado. Banco de ejercicios e interfaz en construcción. Aplicación aún no verificada ni publicada. Actualizar el registro de avances al terminar cada etapa.
+
+AJUSTES CONFIRMADOS DURANTE LA CONSTRUCCIÓN
+Identidad visual IFR: azul, verde y blanco; bordes redondeados, transiciones suaves e iluminación sutil en botones; respetar reducción de movimiento. Prioridad Android/iOS. Audio de voz femenina con acento estadounidense, sujeto a voces disponibles en el dispositivo. PDF con colores IFR y leyenda exacta: Evaluación elaborada por el Profesor Morales Mendoza Raul.
+
+AJUSTES DE REVISIÓN
+Nombre completo y cuatrimestre obligatorios al inicio. Cada PDF identifica al alumno con esos datos. Mantener en preparación: el profesor realizará más ajustes antes de compartir con alumnos. Consultar AVANCES.txt para estado vigente.
+
+CUATRIMESTRE
+Sustituye el campo de grupo libre por un desplegable obligatorio con exactamente dos opciones: Sexto cuatrimestre y Tercer cuatrimestre. Incluir la selección en resultado y PDF.

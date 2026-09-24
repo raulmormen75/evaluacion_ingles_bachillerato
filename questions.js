@@ -1,0 +1,737 @@
+window.TOPICS = ["Saludos y expresiones básicas", "Alfabeto en inglés", "Vocales, consonantes y pronunciación básica", "Números", "Cómo presentarte en inglés"];
+window.QUESTIONS = [
+  {
+    "id": "t1-choice",
+    "topic": 1,
+    "type": "choice",
+    "prompt": "Completa el saludo de la mañana: Good ___.",
+    "explain": "Good morning se usa para saludar por la mañana.",
+    "tag": "Saludos",
+    "choices": [
+      "morning",
+      "evening",
+      "night"
+    ],
+    "answer": "morning"
+  },
+  {
+    "id": "t1-fill",
+    "topic": 1,
+    "type": "fill",
+    "prompt": "Completa con una palabra: My name ___ Laura.",
+    "explain": "My name se acompaña de is.",
+    "tag": "Presentación básica",
+    "answers": [
+      "is"
+    ]
+  },
+  {
+    "id": "t1-dictation",
+    "topic": 1,
+    "type": "dictation",
+    "prompt": "Escucha y escribe la frase completa.",
+    "explain": "Nice to meet you expresa gusto por conocer a alguien.",
+    "tag": "Dictado",
+    "audio": "Nice to meet you.",
+    "answers": [
+      "Nice to meet you"
+    ]
+  },
+  {
+    "id": "t1-listening",
+    "topic": 1,
+    "type": "listening",
+    "prompt": "Escucha. ¿De dónde es la persona?",
+    "explain": "I am from Mexico indica el lugar de origen.",
+    "tag": "Comprensión auditiva",
+    "audio": "Hello. My name is Ana. I am from Mexico.",
+    "choices": [
+      "Mexico",
+      "Canada",
+      "Spain"
+    ],
+    "answer": "Mexico"
+  },
+  {
+    "id": "t1-order",
+    "topic": 1,
+    "type": "order",
+    "prompt": "Ordena las palabras para preguntar el nombre.",
+    "explain": "What is your name? pregunta cómo se llama la persona.",
+    "tag": "Orden de palabras",
+    "tokens": [
+      "What",
+      "is",
+      "your",
+      "name?"
+    ],
+    "answers": [
+      "What is your name?"
+    ]
+  },
+  {
+    "id": "t1-match",
+    "topic": 1,
+    "type": "match",
+    "prompt": "Relaciona cada pregunta con su respuesta.",
+    "explain": "Cada pregunta solicita un dato distinto: nombre, edad u origen.",
+    "tag": "Preguntas básicas",
+    "pairs": [
+      [
+        "What is your name?",
+        "My name is Luis."
+      ],
+      [
+        "How old are you?",
+        "I am sixteen years old."
+      ],
+      [
+        "Where are you from?",
+        "I am from Mexico."
+      ]
+    ]
+  },
+  {
+    "id": "t1-short",
+    "topic": 1,
+    "type": "short",
+    "prompt": "Tu personaje se llama Eva. Responde «What is your name?» con una oración que empiece con «My name» o «I».",
+    "explain": "My name is Eva e I am Eva son presentaciones válidas; también sus contracciones.",
+    "tag": "Respuesta escrita",
+    "answers": [
+      "My name is Eva",
+      "My name's Eva",
+      "I am Eva",
+      "I'm Eva"
+    ]
+  },
+  {
+    "id": "t1-correction",
+    "topic": 1,
+    "type": "correction",
+    "prompt": "Corrige una palabra y escribe la pregunta completa: What are your name?",
+    "explain": "Se usa is con your name.",
+    "tag": "Corrección",
+    "answers": [
+      "What is your name",
+      "What's your name"
+    ]
+  },
+  {
+    "id": "t1-classify",
+    "topic": 1,
+    "type": "classify",
+    "prompt": "Clasifica estas expresiones según su función.",
+    "explain": "Hello y Good afternoon saludan; Bye y See you later despiden.",
+    "tag": "Funciones comunicativas",
+    "categories": [
+      "Saludo",
+      "Despedida"
+    ],
+    "items": [
+      {
+        "text": "Hello",
+        "category": "Saludo"
+      },
+      {
+        "text": "Bye",
+        "category": "Despedida"
+      },
+      {
+        "text": "Good afternoon",
+        "category": "Saludo"
+      },
+      {
+        "text": "See you later",
+        "category": "Despedida"
+      }
+    ]
+  },
+  {
+    "id": "t2-choice",
+    "topic": 2,
+    "type": "choice",
+    "prompt": "Completa la secuencia: A, B, C, ___, E.",
+    "explain": "La letra D está entre C y E.",
+    "tag": "Secuencia alfabética",
+    "choices": [
+      "F",
+      "D",
+      "G"
+    ],
+    "answer": "D"
+  },
+  {
+    "id": "t2-fill",
+    "topic": 2,
+    "type": "fill",
+    "prompt": "Escribe la letra que falta: L, M, ___, O.",
+    "explain": "La letra N está entre M y O.",
+    "tag": "Secuencia alfabética",
+    "answers": [
+      "N"
+    ]
+  },
+  {
+    "id": "t2-dictation",
+    "topic": 2,
+    "type": "dictation",
+    "prompt": "Escucha los nombres de tres letras y escríbelas juntas, en el mismo orden.",
+    "explain": "El deletreo corresponde a B, E y D.",
+    "tag": "Deletreo auditivo",
+    "audio": "B. E. D.",
+    "answers": [
+      "BED",
+      "B E D",
+      "B-E-D",
+      "B, E, D"
+    ]
+  },
+  {
+    "id": "t2-listening",
+    "topic": 2,
+    "type": "listening",
+    "prompt": "Escucha el deletreo. ¿Qué nombre forma?",
+    "explain": "Las letras E, V y A forman Eva.",
+    "tag": "Comprensión de deletreo",
+    "audio": "E. V. A.",
+    "choices": [
+      "Eva",
+      "Ana",
+      "Leo"
+    ],
+    "answer": "Eva"
+  },
+  {
+    "id": "t2-order",
+    "topic": 2,
+    "type": "order",
+    "prompt": "Ordena estas cuatro letras según el alfabeto.",
+    "explain": "El orden es H, I, J, K.",
+    "tag": "Orden alfabético",
+    "tokens": [
+      "H",
+      "I",
+      "J",
+      "K"
+    ],
+    "answers": [
+      "H I J K"
+    ]
+  },
+  {
+    "id": "t2-match",
+    "topic": 2,
+    "type": "match",
+    "prompt": "Relaciona cada mayúscula con su minúscula.",
+    "explain": "Una misma letra puede escribirse en mayúscula o minúscula.",
+    "tag": "Reconocimiento de letras",
+    "pairs": [
+      [
+        "B",
+        "b"
+      ],
+      [
+        "G",
+        "g"
+      ],
+      [
+        "J",
+        "j"
+      ]
+    ]
+  },
+  {
+    "id": "t2-short",
+    "topic": 2,
+    "type": "short",
+    "prompt": "¿Cuántas letras tiene el alfabeto inglés? Escribe solamente el número, con cifras o en inglés.",
+    "explain": "El alfabeto inglés tiene 26 letras.",
+    "tag": "Conocimiento del alfabeto",
+    "answers": [
+      "26",
+      "twenty-six",
+      "twenty six"
+    ]
+  },
+  {
+    "id": "t2-correction",
+    "topic": 2,
+    "type": "correction",
+    "prompt": "En «P, Q, S, S» la tercera letra es incorrecta. Escribe solo la letra que debe sustituirla.",
+    "explain": "Después de Q corresponde R; la secuencia es P, Q, R, S.",
+    "tag": "Corrección de secuencia",
+    "answers": [
+      "R"
+    ]
+  },
+  {
+    "id": "t2-classify",
+    "topic": 2,
+    "type": "classify",
+    "prompt": "Clasifica cada letra por su forma escrita.",
+    "explain": "A y M están en mayúscula; b y n, en minúscula.",
+    "tag": "Formas de las letras",
+    "categories": [
+      "Mayúscula",
+      "Minúscula"
+    ],
+    "items": [
+      {
+        "text": "A",
+        "category": "Mayúscula"
+      },
+      {
+        "text": "b",
+        "category": "Minúscula"
+      },
+      {
+        "text": "M",
+        "category": "Mayúscula"
+      },
+      {
+        "text": "n",
+        "category": "Minúscula"
+      }
+    ]
+  },
+  {
+    "id": "t3-choice",
+    "topic": 3,
+    "type": "choice",
+    "prompt": "Completa: En la palabra «cat», la vocal es ___.",
+    "explain": "Cat contiene la vocal a y las consonantes c y t.",
+    "tag": "Vocales",
+    "choices": [
+      "c",
+      "t",
+      "a"
+    ],
+    "answer": "a"
+  },
+  {
+    "id": "t3-fill",
+    "topic": 3,
+    "type": "fill",
+    "prompt": "Escribe la vocal que falta en la palabra inglesa para pluma: p_n.",
+    "explain": "Pen contiene la vocal e.",
+    "tag": "Vocales en palabras",
+    "answers": [
+      "e"
+    ]
+  },
+  {
+    "id": "t3-dictation",
+    "topic": 3,
+    "type": "dictation",
+    "prompt": "Escucha y escribe la palabra inglesa.",
+    "explain": "Bus se escribe b-u-s; su vocal no suena como la u española.",
+    "tag": "Discriminación auditiva",
+    "audio": "Bus.",
+    "answers": [
+      "bus"
+    ]
+  },
+  {
+    "id": "t3-listening",
+    "topic": 3,
+    "type": "listening",
+    "prompt": "Escucha y selecciona la palabra que se dijo.",
+    "explain": "Sheep tiene un sonido vocálico distinto al de ship.",
+    "tag": "Contraste de sonidos",
+    "audio": "Sheep.",
+    "choices": [
+      "ship",
+      "sheep",
+      "sit"
+    ],
+    "answer": "sheep"
+  },
+  {
+    "id": "t3-order",
+    "topic": 3,
+    "type": "order",
+    "prompt": "Ordena las letras para formar «casa» en inglés. La palabra empieza con h.",
+    "explain": "House empieza con h, que representa una salida suave de aire.",
+    "tag": "Ortografía y sonido inicial",
+    "tokens": [
+      "h",
+      "o",
+      "u",
+      "s",
+      "e"
+    ],
+    "answers": [
+      "h o u s e",
+      "house"
+    ]
+  },
+  {
+    "id": "t3-match",
+    "topic": 3,
+    "type": "match",
+    "prompt": "Relaciona cada palabra con la vocal que contiene.",
+    "explain": "Cat contiene a; sit contiene i; bus contiene u.",
+    "tag": "Vocales en palabras",
+    "pairs": [
+      [
+        "cat",
+        "a"
+      ],
+      [
+        "sit",
+        "i"
+      ],
+      [
+        "bus",
+        "u"
+      ]
+    ]
+  },
+  {
+    "id": "t3-short",
+    "topic": 3,
+    "type": "short",
+    "prompt": "¿Qué letra representa el sonido inicial de «house»? Escribe solamente la letra.",
+    "explain": "House empieza con h y su sonido inicial es audible.",
+    "tag": "Sonido inicial",
+    "answers": [
+      "h"
+    ]
+  },
+  {
+    "id": "t3-correction",
+    "topic": 3,
+    "type": "correction",
+    "prompt": "Corrige la escritura quitando la letra inicial que sobra: eschool. Escribe la palabra completa.",
+    "explain": "School empieza con s; no se agrega una e antes.",
+    "tag": "Ortografía y pronunciación",
+    "answers": [
+      "school"
+    ]
+  },
+  {
+    "id": "t3-classify",
+    "topic": 3,
+    "type": "classify",
+    "prompt": "Clasifica las letras como vocales o consonantes.",
+    "explain": "A y E son vocales; T y M son consonantes.",
+    "tag": "Clasificación de letras",
+    "categories": [
+      "Vocal",
+      "Consonante"
+    ],
+    "items": [
+      {
+        "text": "A",
+        "category": "Vocal"
+      },
+      {
+        "text": "T",
+        "category": "Consonante"
+      },
+      {
+        "text": "E",
+        "category": "Vocal"
+      },
+      {
+        "text": "M",
+        "category": "Consonante"
+      }
+    ]
+  },
+  {
+    "id": "t4-choice",
+    "topic": 4,
+    "type": "choice",
+    "prompt": "Completa: Thirteen = ___.",
+    "explain": "Thirteen significa trece; thirty significa treinta.",
+    "tag": "Reconocimiento numérico",
+    "choices": [
+      "30",
+      "13",
+      "3"
+    ],
+    "answer": "13"
+  },
+  {
+    "id": "t4-fill",
+    "topic": 4,
+    "type": "fill",
+    "prompt": "Tu personaje tiene 17 años. Completa con el número escrito en inglés: I am ___ years old.",
+    "explain": "Diecisiete se escribe seventeen.",
+    "tag": "Edad y números",
+    "answers": [
+      "seventeen"
+    ]
+  },
+  {
+    "id": "t4-dictation",
+    "topic": 4,
+    "type": "dictation",
+    "prompt": "Escucha y escribe el número con letras en inglés.",
+    "explain": "Fifty significa cincuenta y se distingue de fifteen.",
+    "tag": "Dictado de números",
+    "audio": "Fifty.",
+    "answers": [
+      "fifty"
+    ]
+  },
+  {
+    "id": "t4-listening",
+    "topic": 4,
+    "type": "listening",
+    "prompt": "Escucha. ¿Cuántos años tiene Sara?",
+    "explain": "Eighteen years old significa dieciocho años.",
+    "tag": "Comprensión de edad",
+    "audio": "My name is Sara. I am eighteen years old.",
+    "choices": [
+      "80",
+      "8",
+      "18"
+    ],
+    "answer": "18"
+  },
+  {
+    "id": "t4-order",
+    "topic": 4,
+    "type": "order",
+    "prompt": "Ordena los números de menor a mayor.",
+    "explain": "Seven, eight, nine y ten corresponden a 7, 8, 9 y 10.",
+    "tag": "Secuencia numérica",
+    "tokens": [
+      "seven",
+      "eight",
+      "nine",
+      "ten"
+    ],
+    "answers": [
+      "seven eight nine ten"
+    ]
+  },
+  {
+    "id": "t4-match",
+    "topic": 4,
+    "type": "match",
+    "prompt": "Relaciona cada número con su escritura en inglés.",
+    "explain": "Four es 4, fourteen es 14 y forty es 40.",
+    "tag": "Número y palabra",
+    "pairs": [
+      [
+        "4",
+        "four"
+      ],
+      [
+        "14",
+        "fourteen"
+      ],
+      [
+        "40",
+        "forty"
+      ]
+    ]
+  },
+  {
+    "id": "t4-short",
+    "topic": 4,
+    "type": "short",
+    "prompt": "Tu personaje tiene 20 años. Responde «How old are you?» con una oración que empiece con «I am» o su contracción. Puedes usar 20 o twenty.",
+    "explain": "Para la edad se usa I am o I’m; years old puede omitirse.",
+    "tag": "Respuesta con edad",
+    "answers": [
+      "I am twenty years old",
+      "I'm twenty years old",
+      "I am 20 years old",
+      "I'm 20 years old",
+      "I am twenty",
+      "I'm twenty",
+      "I am 20",
+      "I'm 20"
+    ]
+  },
+  {
+    "id": "t4-correction",
+    "topic": 4,
+    "type": "correction",
+    "prompt": "Corrige la escritura del número 40: fourty. Escribe solo la palabra correcta.",
+    "explain": "Cuarenta se escribe forty, sin u.",
+    "tag": "Ortografía numérica",
+    "answers": [
+      "forty"
+    ]
+  },
+  {
+    "id": "t4-classify",
+    "topic": 4,
+    "type": "classify",
+    "prompt": "Clasifica según la terminación de la palabra.",
+    "explain": "Thirteen y fifteen terminan en -teen; thirty y fifty, en -ty.",
+    "tag": "Terminaciones numéricas",
+    "categories": [
+      "Termina en -teen",
+      "Termina en -ty"
+    ],
+    "items": [
+      {
+        "text": "thirteen",
+        "category": "Termina en -teen"
+      },
+      {
+        "text": "thirty",
+        "category": "Termina en -ty"
+      },
+      {
+        "text": "fifteen",
+        "category": "Termina en -teen"
+      },
+      {
+        "text": "fifty",
+        "category": "Termina en -ty"
+      }
+    ]
+  },
+  {
+    "id": "t5-choice",
+    "topic": 5,
+    "type": "choice",
+    "prompt": "Completa: She ___ a student.",
+    "explain": "She se acompaña de is.",
+    "tag": "Pronombres y to be",
+    "choices": [
+      "am",
+      "are",
+      "is"
+    ],
+    "answer": "is"
+  },
+  {
+    "id": "t5-fill",
+    "topic": 5,
+    "type": "fill",
+    "prompt": "Completa con el plural de brother: I have two ___.",
+    "explain": "Después de two, brother pasa al plural brothers.",
+    "tag": "Singular y plural",
+    "answers": [
+      "brothers"
+    ]
+  },
+  {
+    "id": "t5-dictation",
+    "topic": 5,
+    "type": "dictation",
+    "prompt": "Escucha y escribe la oración completa. Se acepta la forma completa o contraída.",
+    "explain": "I am from Mexico e I’m from Mexico expresan el mismo origen.",
+    "tag": "Dictado de presentación",
+    "audio": "I am from Mexico.",
+    "answers": [
+      "I am from Mexico",
+      "I'm from Mexico"
+    ]
+  },
+  {
+    "id": "t5-listening",
+    "topic": 5,
+    "type": "listening",
+    "prompt": "Escucha. ¿Cuándo planea estudiar inglés la persona?",
+    "explain": "Next year significa el próximo año.",
+    "tag": "Planes y expresiones de tiempo",
+    "audio": "I plan to study English next year.",
+    "choices": [
+      "This year",
+      "Next year",
+      "Someday"
+    ],
+    "answer": "Next year"
+  },
+  {
+    "id": "t5-order",
+    "topic": 5,
+    "type": "order",
+    "prompt": "Ordena las palabras para expresar una meta.",
+    "explain": "My goal is to se completa con un verbo en forma base.",
+    "tag": "Metas",
+    "tokens": [
+      "My",
+      "goal",
+      "is",
+      "to",
+      "learn",
+      "English."
+    ],
+    "answers": [
+      "My goal is to learn English."
+    ]
+  },
+  {
+    "id": "t5-match",
+    "topic": 5,
+    "type": "match",
+    "prompt": "Relaciona cada expresión con lo que comunica.",
+    "explain": "Like expresa gusto, would like expresa deseo y plan to expresa un plan.",
+    "tag": "Gustos, deseos y planes",
+    "pairs": [
+      [
+        "I like music.",
+        "Gusto"
+      ],
+      [
+        "I would like to travel.",
+        "Deseo"
+      ],
+      [
+        "I plan to study.",
+        "Plan"
+      ]
+    ]
+  },
+  {
+    "id": "t5-short",
+    "topic": 5,
+    "type": "short",
+    "prompt": "Tu personaje disfruta leer. Escribe una oración que empiece con «I like» y use el verbo read.",
+    "explain": "Después de like se aceptan reading y to read para expresar este gusto.",
+    "tag": "Respuesta sobre gustos",
+    "answers": [
+      "I like reading",
+      "I like to read"
+    ]
+  },
+  {
+    "id": "t5-correction",
+    "topic": 5,
+    "type": "correction",
+    "prompt": "Corrige el verbo después de enjoy y escribe la oración completa: I enjoy to read.",
+    "explain": "Después de enjoy, un segundo verbo lleva -ing: reading.",
+    "tag": "Gerundios",
+    "answers": [
+      "I enjoy reading"
+    ]
+  },
+  {
+    "id": "t5-classify",
+    "topic": 5,
+    "type": "classify",
+    "prompt": "Clasifica estas expresiones de tiempo.",
+    "explain": "This year se refiere a este año; next year al siguiente y someday a algún día.",
+    "tag": "Expresiones de tiempo",
+    "categories": [
+      "Este año",
+      "El próximo año",
+      "Algún día"
+    ],
+    "items": [
+      {
+        "text": "this year",
+        "category": "Este año"
+      },
+      {
+        "text": "next year",
+        "category": "El próximo año"
+      },
+      {
+        "text": "someday",
+        "category": "Algún día"
+      }
+    ]
+  }
+];
