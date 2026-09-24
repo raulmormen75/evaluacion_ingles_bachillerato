@@ -428,11 +428,12 @@ window.QUESTIONS = [
     "id": "t3-correction",
     "topic": 3,
     "type": "correction",
-    "prompt": "Corrige la escritura quitando la letra inicial que sobra: eschool. Escribe la palabra completa.",
-    "explain": "School empieza con s; no se agrega una e antes.",
+    "prompt": "Hay una palabra mal escrita. Corrígela y escribe la oración completa: My sister is a techer.",
+    "explain": "Teacher se escribe con ea. La oración correcta es «My sister is a teacher».",
     "tag": "Ortografía y pronunciación",
     "answers": [
-      "school"
+      "My sister is a teacher",
+      "My sister's a teacher"
     ]
   },
   {
