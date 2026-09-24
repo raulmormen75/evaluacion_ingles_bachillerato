@@ -338,11 +338,12 @@ window.QUESTIONS = [
     "id": "t3-fill",
     "topic": 3,
     "type": "fill",
-    "prompt": "Completa las dos vocales de «st_d_nt» para formar «estudiante» en inglés. Escribe la palabra completa.",
-    "explain": "Student se escribe con u y e: s-t-u-d-e-n-t.",
+    "prompt": "Complete the three words. Write only the words, separated by commas: I have br__kf_st at seven, l_nch at one, and d_nn_r at eight.",
+    "explain": "Las palabras completas, en el mismo orden, son breakfast, lunch y dinner.",
     "tag": "Vocales en palabras",
+    "wordList": true,
     "answers": [
-      "student"
+      "breakfast lunch dinner"
     ]
   },
   {
