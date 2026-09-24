@@ -2,7 +2,7 @@
 
 Aplicación web estática en preparación para revisión docente. Contiene 45 ejercicios breves, nueve por cada uno de cinco temas. No tiene límite de tiempo ni requiere contratar una API.
 
-Al iniciar, cada alumno escribe su **nombre completo y cuatrimestre**. El resultado y el PDF incluyen esos datos, folio, calificación y detalle de respuestas. En todas las páginas del PDF aparece: **Evaluación elaborada por el Profesor Morales Mendoza Raul**.
+Al iniciar, cada alumno escribe su **nombre completo y cuatrimestre**. El resultado y el PDF incluyen esos datos, calificación y detalle de respuestas. En todas las páginas del PDF aparece: **Evaluación elaborada por el Profesor Morales Mendoza Raul**.
 
 ## Ejecutar
 
@@ -35,3 +35,6 @@ Preparada para importarse como sitio estático: Framework Preset **Other**, sin 
 ## Entrega y retroalimentación
 
 Durante la evaluación no se muestran indicadores de progreso, calificación ni correcciones. Tras entregar aparece la calificación en porcentaje, la descarga PDF y los 45 ejercicios completos. Los correctos aparecen en verde; los incorrectos y parciales, en rojo con explicación y corrección. Los audios con incidencia quedan pendientes de revisión docente.
+
+## Navegación de la prueba
+Iniciar prueba abre el primer ejercicio. El alumno avanza con Siguiente hasta el ejercicio 45, finaliza y entrega. No hay cuadrícula, acceso por tema ni saltos a ejercicios. No se genera ni se muestra folio en resultados o PDF.
