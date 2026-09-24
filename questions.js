@@ -164,7 +164,7 @@ window.QUESTIONS = [
     "id": "t2-fill",
     "topic": 2,
     "type": "fill",
-    "prompt": "Completa el deletreo de «school»: S-C-___-O-O-L. Escribe la letra que falta.",
+    "prompt": "Write the missing letter: We study English at sc_ool.",
     "explain": "School se deletrea S-C-H-O-O-L.",
     "tag": "Secuencia alfabética",
     "answers": [
