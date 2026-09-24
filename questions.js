@@ -596,29 +596,29 @@ window.QUESTIONS = [
     "id": "t4-classify",
     "topic": 4,
     "type": "classify",
-    "prompt": "Clasifica según la terminación de la palabra.",
-    "explain": "Thirteen y fifteen terminan en -teen; thirty y fifty, en -ty.",
-    "tag": "Terminaciones numéricas",
+    "prompt": "Clasifica cada número según sea menor o mayor que 1,500.",
+    "explain": "One thousand four hundred fifty es 1,450 y one thousand four hundred five es 1,405: ambos son menores que 1,500. One thousand five hundred forty es 1,540 y one thousand five hundred four es 1,504: ambos son mayores.",
+    "tag": "Comparación de cantidades",
     "categories": [
-      "Termina en -teen",
-      "Termina en -ty"
+      "Menor que 1,500",
+      "Mayor que 1,500"
     ],
     "items": [
       {
-        "text": "thirteen",
-        "category": "Termina en -teen"
+        "text": "one thousand four hundred fifty",
+        "category": "Menor que 1,500"
       },
       {
-        "text": "thirty",
-        "category": "Termina en -ty"
+        "text": "one thousand five hundred forty",
+        "category": "Mayor que 1,500"
       },
       {
-        "text": "fifteen",
-        "category": "Termina en -teen"
+        "text": "one thousand four hundred five",
+        "category": "Menor que 1,500"
       },
       {
-        "text": "fifty",
-        "category": "Termina en -ty"
+        "text": "one thousand five hundred four",
+        "category": "Mayor que 1,500"
       }
     ]
   },
