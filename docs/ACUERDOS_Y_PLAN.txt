@@ -36,7 +36,7 @@ AUDIOS
 Solo reproducción de texto a voz en inglés; sin micrófono, grabación o reconocimiento de voz del alumno. Las frases de dictado no se muestran durante el examen. Seleccionar una voz inglesa disponible, con prueba de audio inicial y velocidades normal/lenta. La calidad y disponibilidad dependen del dispositivo; no prometer la misma voz natural en todos. Si falla el audio, avisar y permitir registrar el problema para revisión del profesor, sin confundir fallo técnico con desconocimiento.
 
 CORRECCIÓN
-Un punto por ejercicio, 45 puntos posibles. En relacionar y clasificar, crédito proporcional por elemento. Calificación sobre 10 a partir del puntaje obtenido. Aceptar variantes previstas y contracciones válidas en contexto (I am / I'm, you are / you're). Normalizar espacios, mayúsculas y puntuación final cuando no son el objetivo. No aceptar contracciones gramaticalmente inválidas, por ejemplo Yes, I'm como respuesta completa.
+Un punto por ejercicio, 45 puntos posibles. En relacionar y clasificar, crédito proporcional por elemento. Calificación en porcentaje: puntos obtenidos entre 45, multiplicados por 100. Aceptar variantes previstas y contracciones válidas en contexto (I am / I'm, you are / you're). Normalizar espacios, mayúsculas y puntuación final cuando no son el objetivo. No aceptar contracciones gramaticalmente inválidas, por ejemplo Yes, I'm como respuesta completa.
 Usar respuestas breves acotadas por el enunciado para evitar calificar injustamente respuestas personales abiertas. No afirmar que las reglas equivalen a comprensión semántica por IA. Conservar respuestas originales para revisión docente.
 
 RESULTADO
@@ -64,3 +64,6 @@ Nombre completo y cuatrimestre obligatorios al inicio. Cada PDF identifica al al
 
 CUATRIMESTRE
 Sustituye el campo de grupo libre por un desplegable obligatorio con exactamente dos opciones: Sexto cuatrimestre y Tercer cuatrimestre. Incluir la selección en resultado y PDF.
+
+RESULTADOS Y RETROALIMENTACIÓN
+Durante el intento no mostrar barras, contadores ni colores de progreso; tampoco nota, aciertos o correcciones. Mantener navegación neutral. Al entregar, mostrar porcentaje grande y botón de descarga. Presentar los 45 ejercicios detallados, sin desplegables: correctos verdes; incorrectos o parciales rojos con explicación y corrección. Replicar en el PDF. Audio con incidencia permanece pendiente de revisión docente y no se etiqueta como incorrecto.

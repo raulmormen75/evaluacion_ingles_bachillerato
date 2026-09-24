@@ -20,8 +20,11 @@ PENDIENTE
 - Revisión y ajustes del profesor antes de publicar.
 - Validación visual en navegador real y Android/iOS; el navegador de pruebas no estuvo disponible en el entorno.
 - Escuchar y validar voz femenina estadounidense en los dispositivos del grupo.
-- Comprobar descarga PDF y saltos de página visualmente.
+- Comprobar descarga PDF en Android/iOS. Saltos de página y colores ya revisados en un PDF generado de prueba.
 - Conectar/publicar en Vercel cuando termine la revisión docente. No se ha desplegado esta aplicación.
 
 ÚLTIMO AJUSTE
 Cuatrimestre obligatorio mediante desplegable: Sexto cuatrimestre o Tercer cuatrimestre. Nombre y selección aparecen en el PDF.
+
+RESULTADO FINAL ACTUALIZADO
+Sin indicadores de progreso durante el intento. Porcentaje grande al entregar, botón PDF y detalle completo sin desplegables. Correctos verdes, incorrectos/parciales rojos con explicación y corrección. Verificados 45 resultados, respuesta equivocada, vacía, parcial y audio pendiente; generación PDF y revisión visual de sus páginas.

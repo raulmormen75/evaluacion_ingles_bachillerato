@@ -31,3 +31,7 @@ Respuestas y datos se guardan en el navegador del alumno. No hay cuentas, panel 
 ## Vercel
 
 Preparada para importarse como sitio estático: Framework Preset **Other**, sin Build Command, Output Directory **.**. `vercel.json` incluye la configuración. **No publicar para alumnos todavía:** quedan ajustes solicitados por el profesor y validación real en Android/iOS.
+
+## Entrega y retroalimentación
+
+Durante la evaluación no se muestran indicadores de progreso, calificación ni correcciones. Tras entregar aparece la calificación en porcentaje, la descarga PDF y los 45 ejercicios completos. Los correctos aparecen en verde; los incorrectos y parciales, en rojo con explicación y corrección. Los audios con incidencia quedan pendientes de revisión docente.
