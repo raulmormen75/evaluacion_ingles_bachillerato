@@ -365,10 +365,10 @@ window.QUESTIONS = [
     "id": "t3-listening",
     "topic": 3,
     "type": "listening",
-    "prompt": "Escucha. ¿Qué le gusta a la persona que habla?",
-    "explain": "La persona dice que le gusta la música; a su hermana le gustan las películas.",
+    "prompt": "Escucha. ¿Qué le gusta a Ana?",
+    "explain": "A Ana le gusta la música y a Laura le gustan las películas.",
     "tag": "Comprensión auditiva",
-    "audio": "I like music, but my sister likes movies.",
+    "audio": "Ana likes music, but Laura likes movies.",
     "choices": [
       "Music",
       "Movies",

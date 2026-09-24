@@ -72,6 +72,6 @@ for(const id of ['t2-dictation','t2-short','t3-fill']){
 console.log('PASS: all written word lists accept spaces and commas while checking order and completeness.');
 
 const musicSentence=questions.find(q=>q.id==='t3-listening');
-assert.equal(musicSentence.audio,'I like music, but my sister likes movies.');
+assert.equal(musicSentence.audio,'Ana likes music, but Laura likes movies.');
 assert.equal(scoring.grade(musicSentence,'Music'),1);
 for(const wrong of ['Movies','Sports'])assert.equal(scoring.grade(musicSentence,wrong),0);
