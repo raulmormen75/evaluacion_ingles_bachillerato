@@ -194,9 +194,9 @@ window.QUESTIONS = [
     "tag": "Comprensión de vocabulario escolar",
     "audio": "I have a pencil and a notebook, but I don't have a ruler.",
     "choices": [
-      "A pencil",
+      "An eraser",
       "A ruler",
-      "A notebook"
+      "A backpack"
     ],
     "answer": "A ruler"
   },
