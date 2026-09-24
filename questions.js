@@ -175,7 +175,7 @@ window.QUESTIONS = [
     "id": "t2-dictation",
     "topic": 2,
     "type": "dictation",
-    "prompt": "Escucha los nombres de tres letras y escríbelas juntas, en el mismo orden.",
+    "prompt": "Escucha las tres letras y escríbelas en el mismo orden.",
     "explain": "El deletreo corresponde a B, E y D.",
     "tag": "Deletreo auditivo",
     "audio": "B. E. D.",
