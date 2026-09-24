@@ -47,12 +47,12 @@ assert.equal(scoring.grade(spelling,{0:'Jane',1:'Sara',2:'Mike'}),1);
 assert.equal(scoring.grade(spelling,{0:'Jean',1:'Sarah',2:'Nick'}),0);
 assert.equal(scoring.grade(spelling,{0:'Jane',1:'Sarah',2:'Mike'}),2/3);
 spelling.audioPairs.forEach((clip,i)=>assert(clip.choices.includes(spelling.pairs[i][1])));
-for(const [id,good,bad] of [['t2-short','name new nice','name nice new'],['t3-fill','breakfast, lunch, dinner','breakfast lunch diner'],['t4-choice','13 y 30','30 y 13']]){
+for(const [id,good,bad] of [['t2-short','name new nice','name nice new'],['t3-fill','thirteen, forty, eighteen','thirteen fourty eighteen'],['t4-choice','13 y 30','30 y 13']]){
  const item=questions.find(q=>q.id===id);assert.equal(scoring.grade(item,good),1);assert.equal(scoring.grade(item,bad),0);
 }
-const meals=questions.find(q=>q.id==='t3-fill');
-assert.equal(scoring.grade(meals,'Breakfast, lunch, dinner.'),1);
-assert.equal(scoring.grade(meals,'breakfast lunch dinner'),1);
-assert.equal(scoring.grade(meals,'breakfast lunch'),0);
-assert.equal(scoring.grade(meals,'dinner lunch breakfast'),0);
+const numberWords=questions.find(q=>q.id==='t3-fill');
+assert.equal(scoring.grade(numberWords,'Thirteen, forty, eighteen.'),1);
+assert.equal(scoring.grade(numberWords,'thirteen forty eighteen'),1);
+assert.equal(scoring.grade(numberWords,'thirteen forty'),0);
+assert.equal(scoring.grade(numberWords,'eighteen forty thirteen'),0);
 console.log('PASS: 45 questions, nine formats per topic, correct/blank answers, contractions and partial credit.');

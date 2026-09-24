@@ -338,12 +338,12 @@ window.QUESTIONS = [
     "id": "t3-fill",
     "topic": 3,
     "type": "fill",
-    "prompt": "Complete the three words. Write only the words, separated by commas: I have br__kf_st at seven, l_nch at one, and d_nn_r at eight.",
-    "explain": "Las palabras completas, en el mismo orden, son breakfast, lunch y dinner.",
+    "prompt": "Complete the three numbers. Write the words in order, separated by commas: th_rt__n, f_rty, __ght__n.",
+    "explain": "Los números completos, en el mismo orden, son thirteen, forty y eighteen.",
     "tag": "Vocales en palabras",
     "wordList": true,
     "answers": [
-      "breakfast lunch dinner"
+      "thirteen forty eighteen"
     ]
   },
   {
