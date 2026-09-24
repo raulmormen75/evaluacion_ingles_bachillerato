@@ -583,12 +583,13 @@ window.QUESTIONS = [
   {
     "id": "t4-correction",
     "topic": 4,
-    "type": "correction",
-    "prompt": "Corrige la escritura del número 40: fourty. Escribe solo la palabra correcta.",
-    "explain": "Cuarenta se escribe forty, sin u.",
-    "tag": "Ortografía numérica",
+    "type": "short",
+    "prompt": "Escribe este número completo con palabras en inglés: 1,014,926.",
+    "explain": "1,014,926 se escribe one million fourteen thousand nine hundred twenty-six. También se acepta and antes de twenty-six.",
+    "tag": "Escritura de números",
+    "numberWords": true,
     "answers": [
-      "forty"
+      "one million fourteen thousand nine hundred twenty six"
     ]
   },
   {

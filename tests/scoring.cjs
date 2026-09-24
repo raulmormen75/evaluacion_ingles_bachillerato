@@ -12,7 +12,7 @@ assert.equal(new Set(questions.map(q=>q.id)).size,45);
 for(let topic=1;topic<=5;topic++){
  const subset=questions.filter(q=>q.topic===topic);
  assert.equal(subset.length,9);
- assert.equal(new Set(subset.map(q=>q.type)).size,9);
+ assert.equal(new Set(subset.map(q=>q.type)).size,topic===4?8:9);
 }
 for(const q of questions){
  const answer=q.pairs?Object.fromEntries(q.pairs.map((p,i)=>[i,p[1]])):q.items?Object.fromEntries(q.items.map((p,i)=>[i,p.category])):q.tokens?q.tokens.map((_,i)=>i):q.answers?.[0]??q.answer;
@@ -55,4 +55,7 @@ assert.equal(scoring.grade(numberWords,'Thirteen, forty, eighteen.'),1);
 assert.equal(scoring.grade(numberWords,'thirteen forty eighteen'),1);
 assert.equal(scoring.grade(numberWords,'thirteen forty'),0);
 assert.equal(scoring.grade(numberWords,'eighteen forty thirteen'),0);
-console.log('PASS: 45 questions, nine formats per topic, correct/blank answers, contractions and partial credit.');
+const largeNumber=questions.find(q=>q.id==='t4-correction');
+for(const answer of ['One million fourteen thousand nine hundred twenty-six.', 'one million, fourteen thousand, nine hundred and twenty six'])assert.equal(scoring.grade(largeNumber,answer),1);
+for(const answer of ['1014926','one million fourteen thousand nine hundred twenty five','fourteen thousand nine hundred twenty six'])assert.equal(scoring.grade(largeNumber,answer),0);
+console.log('PASS: 45 questions, nine exercises per topic, correct/blank answers, contractions and partial credit.');
