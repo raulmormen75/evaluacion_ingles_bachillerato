@@ -22,8 +22,7 @@ previous = {clip['id']: clip['text'] for clip in json.loads(previous_path.read_t
 manifest = {'voice': 'af_heart', 'language': 'en-us', 'model': 'Kokoro v1.0', 'clips': []}
 for name, text in jobs:
     # Explicit letter-name phonemes prevent initials being read as abbreviations.
-    letters = {'t2-listening': ['ˈiː', 'vˈiː', 'ˈeɪ'],
-               't2-match-1': ['dʒˈeɪ', 'ˈeɪ', 'ˈɛn', 'ˈiː'],
+    letters = {'t2-match-1': ['dʒˈeɪ', 'ˈeɪ', 'ˈɛn', 'ˈiː'],
                't2-match-2': ['ˈɛs', 'ˈeɪ', 'ˈɑːɹ', 'ˈeɪ'],
                't2-match-3': ['ˈɛm', 'ˈaɪ', 'kˈeɪ', 'ˈiː']}
     if (out / (name + '.wav')).exists() and previous.get(name) == text and not (refresh_spelling and name in letters):

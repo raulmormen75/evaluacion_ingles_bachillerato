@@ -189,16 +189,16 @@ window.QUESTIONS = [
     "id": "t2-listening",
     "topic": 2,
     "type": "listening",
-    "prompt": "Escucha el deletreo. ¿Qué nombre forma?",
-    "explain": "Las letras E, V y A forman Eva.",
-    "tag": "Comprensión de deletreo",
-    "audio": "E. V. A.",
+    "prompt": "Escucha. ¿Qué objeto le falta a la persona?",
+    "explain": "La persona tiene un lápiz y un cuaderno, pero dice que no tiene una regla: I don’t have a ruler.",
+    "tag": "Comprensión de vocabulario escolar",
+    "audio": "I have a pencil and a notebook, but I don't have a ruler.",
     "choices": [
-      "Eva",
-      "Ana",
-      "Leo"
+      "A pencil",
+      "A ruler",
+      "A notebook"
     ],
-    "answer": "Eva"
+    "answer": "A ruler"
   },
   {
     "id": "t2-order",
