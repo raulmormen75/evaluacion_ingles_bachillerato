@@ -363,15 +363,15 @@ window.QUESTIONS = [
     "topic": 3,
     "type": "listening",
     "prompt": "Escucha y selecciona la palabra que se dijo.",
-    "explain": "Sheep tiene un sonido vocálico distinto al de ship.",
-    "tag": "Contraste de sonidos",
-    "audio": "Sheep.",
+    "explain": "La palabra que se escucha es music, que significa música.",
+    "tag": "Reconocimiento auditivo",
+    "audio": "Music.",
     "choices": [
-      "ship",
-      "sheep",
-      "sit"
+      "Mexico",
+      "music",
+      "morning"
     ],
-    "answer": "sheep"
+    "answer": "music"
   },
   {
     "id": "t3-order",
