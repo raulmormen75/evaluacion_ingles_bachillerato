@@ -83,6 +83,7 @@ button:disabled{opacity:1;color:#7d8295;background:#edf0f5;border-color:#edf0f5;
 .pair label{font-size:16px;font-weight:600}
 .pair select{margin-top:6px}
 .save-state{font-size:10px;color:var(--muted);margin-top:20px}
+.save-state:empty{display:none}
 .nav-buttons{position:sticky;bottom:0;z-index:2;justify-content:flex-end;padding:14px 0 max(14px,env(safe-area-inset-bottom));margin-top:20px;background:#fff;border-top:1px solid var(--line)}
 .nav-buttons button{width:100%;min-height:52px;font-size:14px}
 main>.card{max-width:850px;margin:0 auto;padding-top:30px;padding-bottom:42px}
