@@ -444,7 +444,7 @@ window.QUESTIONS = [
     "id": "t3-classify",
     "topic": 3,
     "type": "classify",
-    "prompt": "Clasifica las palabras según tengan una o dos vocales escritas diferentes.",
+    "prompt": "Clasifica cada palabra por la cantidad de vocales distintas que contiene. Si una vocal se repite, cuéntala solo una vez.",
     "explain": "School solo tiene o y street solo e, aunque se repitan. Teacher tiene e y a; student tiene u y e.",
     "tag": "Clasificación de letras",
     "categories": [
