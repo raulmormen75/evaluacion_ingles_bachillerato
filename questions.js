@@ -4,15 +4,15 @@ window.QUESTIONS = [
     "id": "t1-choice",
     "topic": 1,
     "type": "choice",
-    "prompt": "Completa el saludo de la mañana: Good ___.",
-    "explain": "Good morning se usa para saludar por la mañana.",
+    "prompt": "It is 7:00 p.m. You meet your teacher at school. Complete your greeting: Good ___.",
+    "explain": "Good evening se usa para saludar al llegar por la tarde-noche. Good night se usa al despedirse o antes de dormir.",
     "tag": "Saludos",
     "choices": [
       "morning",
       "evening",
       "night"
     ],
-    "answer": "morning"
+    "answer": "evening"
   },
   {
     "id": "t1-fill",
