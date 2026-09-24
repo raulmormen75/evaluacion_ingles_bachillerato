@@ -1,15 +1,17 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path');
 const root=path.resolve(__dirname,'..');
 const nodes=new Map();
-const node=id=>{if(!nodes.has(id))nodes.set(id,{innerHTML:'',textContent:'',value:'',disabled:false,focus(){},addEventListener(){}});return nodes.get(id);};
+const node=id=>{if(!nodes.has(id))nodes.set(id,{innerHTML:'',textContent:'',value:'',disabled:false,focus(){},addEventListener(){},setAttribute(k,v){this[k]=v;},getAnimations(){return [];},animate(frames,options){this.animation={frames,options};}});return nodes.get(id);};
 let stored=null;
-const c=vm.createContext({crypto:require('node:crypto').webcrypto,window:{addEventListener(){},scrollTo(){}},document:{getElementById:node,querySelectorAll:()=>[]},localStorage:{getItem:()=>stored,setItem:(k,v)=>{stored=v;},removeItem:()=>{stored=null;}},setTimeout:()=>1,clearTimeout(){},console});
+const c=vm.createContext({crypto:require('node:crypto').webcrypto,window:{addEventListener(){},scrollTo(){},matchMedia(){return {matches:false};}},document:{getElementById:node,querySelectorAll:()=>[]},localStorage:{getItem:()=>stored,setItem:(k,v)=>{stored=v;},removeItem:()=>{stored=null;}},setTimeout:()=>1,clearTimeout(){},console});
 for(const file of ['questions.js','scoring.js','app.js']){vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),c);if(file==='questions.js')c.TOPICS=c.window.TOPICS;}
 const run=code=>vm.runInContext(code,c);
 run(`state={version:VERSION,name:'Prueba',group:'Tercer cuatrimestre',started:new Date().toISOString(),ids:BANK.map(q=>q.id),index:0,answers:{},orderings:{},issues:{},plays:{},done:false};for(const q of BANK){if(q.choices)state.orderings[q.id]=q.choices;if(q.tokens)state.orderings[q.id]=q.tokens.map((_,i)=>i);if(q.pairs)state.orderings[q.id]=q.pairs.map(p=>p[1]);}renderQuestion();`);
+node('next').onclick();assert(node('next').animation);assert.equal(run('state.index'),0);
 run('go(1);review();results();downloadPDF();restartEvaluation()');assert.equal(run('state.index'),0);assert.equal(run('view'),'exam');
 for(let i=0;i<45;i++){
  assert.equal(run('state.index'),i);
+ if(run("['match','classify'].includes(qs()[state.index].type)")){run("setAnswer(qs()[state.index],{0:'partial'})");node('next').onclick();assert.equal(run('state.index'),i);assert.equal(node('next')['aria-disabled'],'true');}
  run(`{const q=qs()[state.index];const answer=q.pairs?Object.fromEntries(q.pairs.map((p,i)=>[i,p[1]])):q.items?Object.fromEntries(q.items.map((p,i)=>[i,p.category])):q.tokens?q.tokens.map((_,i)=>i):q.answers?.[0]??q.answer;setAnswer(q,answer);}`);
  if(i<44){run(`go(${i+1})`);const before=run('JSON.stringify(state.answers)');run(`setAnswer(qs()[${i}],'changed');go(${i});`);assert.equal(run('JSON.stringify(state.answers)'),before);assert.equal(run('state.index'),i+1);}
 }
