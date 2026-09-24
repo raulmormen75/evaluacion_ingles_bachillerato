@@ -150,25 +150,25 @@ window.QUESTIONS = [
     "id": "t2-choice",
     "topic": 2,
     "type": "choice",
-    "prompt": "Completa la secuencia: A, B, C, ___, E.",
-    "explain": "La letra D está entre C y E.",
+    "prompt": "Selecciona la lista que está en orden alfabético.",
+    "explain": "Las tres palabras empiezan con b. La segunda letra determina el orden: a, e, i.",
     "tag": "Secuencia alfabética",
     "choices": [
-      "F",
-      "D",
-      "G"
+      "bag, bed, big",
+      "bed, bag, big",
+      "big, bed, bag"
     ],
-    "answer": "D"
+    "answer": "bag, bed, big"
   },
   {
     "id": "t2-fill",
     "topic": 2,
     "type": "fill",
-    "prompt": "Escribe la letra que falta: L, M, ___, O.",
-    "explain": "La letra N está entre M y O.",
+    "prompt": "Completa el deletreo de «school»: S-C-___-O-O-L. Escribe la letra que falta.",
+    "explain": "School se deletrea S-C-H-O-O-L.",
     "tag": "Secuencia alfabética",
     "answers": [
-      "N"
+      "H"
     ]
   },
   {
@@ -205,52 +205,79 @@ window.QUESTIONS = [
     "id": "t2-order",
     "topic": 2,
     "type": "order",
-    "prompt": "Ordena estas cuatro letras según el alfabeto.",
-    "explain": "El orden es H, I, J, K.",
+    "prompt": "Ordena estas palabras alfabéticamente.",
+    "explain": "Cap, car y cat se ordenan por su tercera letra; cup va después porque u sigue a a.",
     "tag": "Orden alfabético",
     "tokens": [
-      "H",
-      "I",
-      "J",
-      "K"
+      "cap",
+      "car",
+      "cat",
+      "cup"
     ],
     "answers": [
-      "H I J K"
+      "cap car cat cup"
     ]
   },
   {
     "id": "t2-match",
     "topic": 2,
     "type": "match",
-    "prompt": "Relaciona cada mayúscula con su minúscula.",
-    "explain": "Una misma letra puede escribirse en mayúscula o minúscula.",
-    "tag": "Reconocimiento de letras",
+    "prompt": "Escucha cada deletreo y selecciona el nombre correcto.",
+    "explain": "J-A-N-E forma Jane; S-A-R-A forma Sara; M-I-K-E forma Mike.",
+    "tag": "Deletreo de nombres",
     "pairs": [
       [
-        "B",
-        "b"
+        "Audio 1",
+        "Jane"
       ],
       [
-        "G",
-        "g"
+        "Audio 2",
+        "Sara"
       ],
       [
-        "J",
-        "j"
+        "Audio 3",
+        "Mike"
       ]
+    ],
+    "audioPairs": [
+      {
+        "id": "t2-match-1",
+        "text": "J. A. N. E.",
+        "choices": [
+          "Jane",
+          "Jean",
+          "June"
+        ]
+      },
+      {
+        "id": "t2-match-2",
+        "text": "S. A. R. A.",
+        "choices": [
+          "Sara",
+          "Sarah",
+          "Zara"
+        ]
+      },
+      {
+        "id": "t2-match-3",
+        "text": "M. I. K. E.",
+        "choices": [
+          "Mike",
+          "Mick",
+          "Nick"
+        ]
+      }
     ]
   },
   {
     "id": "t2-short",
     "topic": 2,
     "type": "short",
-    "prompt": "¿Cuántas letras tiene el alfabeto inglés? Escribe solamente el número, con cifras o en inglés.",
-    "explain": "El alfabeto inglés tiene 26 letras.",
+    "prompt": "Escribe en orden alfabético las palabras «name», «nice» y «new», separadas por espacios.",
+    "explain": "Las palabras empiezan con n; sus segundas letras se ordenan a, e, i.",
     "tag": "Conocimiento del alfabeto",
     "answers": [
-      "26",
-      "twenty-six",
-      "twenty six"
+      "name new nice"
     ]
   },
   {
@@ -268,29 +295,29 @@ window.QUESTIONS = [
     "id": "t2-classify",
     "topic": 2,
     "type": "classify",
-    "prompt": "Clasifica cada letra por su forma escrita.",
-    "explain": "A y M están en mayúscula; b y n, en minúscula.",
+    "prompt": "Clasifica cada palabra según su posición alfabética respecto a «milk».",
+    "explain": "Meet va antes por e; moon después por o. Mile precede a milk por e frente a k; mind va después por n frente a l.",
     "tag": "Formas de las letras",
     "categories": [
-      "Mayúscula",
-      "Minúscula"
+      "Antes de milk",
+      "Después de milk"
     ],
     "items": [
       {
-        "text": "A",
-        "category": "Mayúscula"
+        "text": "meet",
+        "category": "Antes de milk"
       },
       {
-        "text": "b",
-        "category": "Minúscula"
+        "text": "moon",
+        "category": "Después de milk"
       },
       {
-        "text": "M",
-        "category": "Mayúscula"
+        "text": "mile",
+        "category": "Antes de milk"
       },
       {
-        "text": "n",
-        "category": "Minúscula"
+        "text": "mind",
+        "category": "Después de milk"
       }
     ]
   },
@@ -298,25 +325,25 @@ window.QUESTIONS = [
     "id": "t3-choice",
     "topic": 3,
     "type": "choice",
-    "prompt": "Completa: En la palabra «cat», la vocal es ___.",
-    "explain": "Cat contiene la vocal a y las consonantes c y t.",
+    "prompt": "¿Qué palabra contiene tres vocales escritas diferentes?",
+    "explain": "House contiene o, u y e, tres vocales diferentes.",
     "tag": "Vocales",
     "choices": [
-      "c",
-      "t",
-      "a"
+      "school",
+      "house",
+      "cat"
     ],
-    "answer": "a"
+    "answer": "house"
   },
   {
     "id": "t3-fill",
     "topic": 3,
     "type": "fill",
-    "prompt": "Escribe la vocal que falta en la palabra inglesa para pluma: p_n.",
-    "explain": "Pen contiene la vocal e.",
+    "prompt": "Completa las dos vocales de «st_d_nt» para formar «estudiante» en inglés. Escribe la palabra completa.",
+    "explain": "Student se escribe con u y e: s-t-u-d-e-n-t.",
     "tag": "Vocales en palabras",
     "answers": [
-      "e"
+      "student"
     ]
   },
   {
@@ -369,21 +396,21 @@ window.QUESTIONS = [
     "id": "t3-match",
     "topic": 3,
     "type": "match",
-    "prompt": "Relaciona cada palabra con la vocal que contiene.",
-    "explain": "Cat contiene a; sit contiene i; bus contiene u.",
-    "tag": "Vocales en palabras",
+    "prompt": "Relaciona cada grupo de letras con la palabra que completa.",
+    "explain": "Sh completa sheep; ch completa chair; th completa three.",
+    "tag": "Grupos de consonantes",
     "pairs": [
       [
-        "cat",
-        "a"
+        "sh",
+        "___eep"
       ],
       [
-        "sit",
-        "i"
+        "ch",
+        "___air"
       ],
       [
-        "bus",
-        "u"
+        "th",
+        "___ree"
       ]
     ]
   },
@@ -413,29 +440,29 @@ window.QUESTIONS = [
     "id": "t3-classify",
     "topic": 3,
     "type": "classify",
-    "prompt": "Clasifica las letras como vocales o consonantes.",
-    "explain": "A y E son vocales; T y M son consonantes.",
+    "prompt": "Clasifica las palabras según tengan una o dos vocales escritas diferentes.",
+    "explain": "School solo tiene o y street solo e, aunque se repitan. Teacher tiene e y a; student tiene u y e.",
     "tag": "Clasificación de letras",
     "categories": [
-      "Vocal",
-      "Consonante"
+      "Una vocal diferente",
+      "Dos vocales diferentes"
     ],
     "items": [
       {
-        "text": "A",
-        "category": "Vocal"
+        "text": "school",
+        "category": "Una vocal diferente"
       },
       {
-        "text": "T",
-        "category": "Consonante"
+        "text": "teacher",
+        "category": "Dos vocales diferentes"
       },
       {
-        "text": "E",
-        "category": "Vocal"
+        "text": "street",
+        "category": "Una vocal diferente"
       },
       {
-        "text": "M",
-        "category": "Consonante"
+        "text": "student",
+        "category": "Dos vocales diferentes"
       }
     ]
   },
@@ -443,15 +470,15 @@ window.QUESTIONS = [
     "id": "t4-choice",
     "topic": 4,
     "type": "choice",
-    "prompt": "Completa: Thirteen = ___.",
-    "explain": "Thirteen significa trece; thirty significa treinta.",
+    "prompt": "Elige la pareja que corresponde a «thirteen» y «thirty», en ese orden.",
+    "explain": "Thirteen es 13 y thirty es 30.",
     "tag": "Reconocimiento numérico",
     "choices": [
-      "30",
-      "13",
-      "3"
+      "13 y 30",
+      "30 y 13",
+      "13 y 40"
     ],
-    "answer": "13"
+    "answer": "13 y 30"
   },
   {
     "id": "t4-fill",
@@ -496,16 +523,16 @@ window.QUESTIONS = [
     "topic": 4,
     "type": "order",
     "prompt": "Ordena los números de menor a mayor.",
-    "explain": "Seven, eight, nine y ten corresponden a 7, 8, 9 y 10.",
+    "explain": "El orden es 13, 14, 30 y 40: thirteen, fourteen, thirty, forty.",
     "tag": "Secuencia numérica",
     "tokens": [
-      "seven",
-      "eight",
-      "nine",
-      "ten"
+      "thirteen",
+      "fourteen",
+      "thirty",
+      "forty"
     ],
     "answers": [
-      "seven eight nine ten"
+      "thirteen fourteen thirty forty"
     ]
   },
   {

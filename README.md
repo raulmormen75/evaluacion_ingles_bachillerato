@@ -22,7 +22,7 @@ Prueba de calificación: `node tests/scoring.cjs`.
 
 ## Audio y dispositivos
 
-Voz sintética femenina estadounidense Heart (`af_heart`), generada localmente con Kokoro v1.0 y kokoro-onnx 0.6.1. Los once WAV se sirven desde `assets/audio`: diez ejercicios y una prueba. No hay API de pago, claves ni dependencia de voces instaladas. Los botones permiten reproducir, escuchar a 0.5x y detener; la reproducción comienza con una interacción del alumno.
+Voz sintética femenina estadounidense Heart (`af_heart`), generada localmente con Kokoro v1.0 y kokoro-onnx 0.6.1. Los catorce WAV se sirven desde `assets/audio`: diez audios individuales, tres deletreos del ejercicio de relacionar y una prueba. No hay API de pago, claves ni dependencia de voces instaladas. Los botones permiten reproducir, escuchar a 0.5x y detener; la reproducción comienza con una interacción del alumno.
 
 Fuentes: https://huggingface.co/hexgrad/Kokoro-82M (modelo Apache 2.0), https://github.com/thewh1teagle/kokoro-onnx (herramienta MIT). El modelo y las dependencias de generación no se distribuyen con el sitio. `scripts/generate_heart.py` permite regenerar los WAV proporcionando una carpeta con `kokoro-v1.0.onnx` y `voices-v1.0.bin`. Entorno local: `kokoro-onnx==0.6.1`, `soundfile==0.14.0`. Los nombres de las letras se generan por separado con pausas.
 
@@ -42,3 +42,5 @@ Durante la evaluación no se muestran indicadores de progreso, calificación ni 
 Iniciar prueba abre el primer ejercicio. Siguiente se habilita cuando la respuesta está completa; al avanzar se bloquea la anterior. El ejercicio 45 conduce a la entrega. No hay reinicio, retroceso, cuadrícula ni acceso por tema. Recargar conserva el intento y el ejercicio pendiente. Solo se obtiene resultado/PDF al completar y entregar los 45. No se genera ni se muestra folio. La permanencia del intento depende del almacenamiento del navegador; no hay identificación en servidor.
 
 Pruebas del flujo y audios: `node tests/flow.cjs`.
+
+La revisión de dificultad sustituye doce ejercicios simples por deletreo de nombres, orden alfabético de palabras, grupos de consonantes y contrastes numéricos. Los tres deletreos tienen controles independientes y opciones que se mezclan por intento. El banco actualizado se aplica también a los intentos en curso, conservando su posición y respuestas.

@@ -3,7 +3,7 @@ const root=path.resolve(__dirname,'..');
 const nodes=new Map();
 const node=id=>{if(!nodes.has(id))nodes.set(id,{innerHTML:'',textContent:'',value:'',disabled:false,focus(){},addEventListener(){}});return nodes.get(id);};
 let stored=null;
-const c=vm.createContext({window:{addEventListener(){}},document:{getElementById:node,querySelectorAll:()=>[]},localStorage:{getItem:()=>stored,setItem:(k,v)=>{stored=v;}},setTimeout:()=>1,clearTimeout(){},console});
+const c=vm.createContext({crypto:require('node:crypto').webcrypto,window:{addEventListener(){}},document:{getElementById:node,querySelectorAll:()=>[]},localStorage:{getItem:()=>stored,setItem:(k,v)=>{stored=v;}},setTimeout:()=>1,clearTimeout(){},console});
 for(const file of ['questions.js','scoring.js','app.js']){vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),c);if(file==='questions.js')c.TOPICS=c.window.TOPICS;}
 const run=code=>vm.runInContext(code,c);
 run(`state={version:VERSION,name:'Prueba',group:'Tercer cuatrimestre',started:new Date().toISOString(),ids:BANK.map(q=>q.id),index:0,answers:{},orderings:{},issues:{},plays:{},done:false};for(const q of BANK){if(q.choices)state.orderings[q.id]=q.choices;if(q.tokens)state.orderings[q.id]=q.tokens.map((_,i)=>i);if(q.pairs)state.orderings[q.id]=q.pairs.map(p=>p[1]);}renderQuestion();`);
@@ -21,6 +21,9 @@ const answers=run('JSON.stringify(state.answers)');run('setAnswer(qs()[44],"chan
 assert(!/Folio|id="restart"|id="print"|question-grid/.test(node('app').innerHTML));
 run('state=null;restore();startScreen()');assert.equal(run('state.done'),true);assert.equal(run('view'),'results');
 const manifest=JSON.parse(fs.readFileSync(path.join(root,'assets/audio/manifest.json'),'utf8'));
-assert.equal(manifest.voice,'af_heart');assert.equal(manifest.clips.length,11);
+assert.equal(manifest.voice,'af_heart');assert.equal(manifest.clips.length,14);
 for(const clip of manifest.clips){const data=fs.readFileSync(path.join(root,'assets/audio',clip.id+'.wav'));assert.equal(data.toString('ascii',0,4),'RIFF');assert(clip.seconds>0.5);}
-console.log('PASS: empty answers blocked; 45 sequential steps; previous answers locked; complete-only result/PDF; resume without restart; 11 Heart WAVs.');
+const previous=JSON.parse(stored);previous.orderings['t2-match']=['b','g','j'];stored=JSON.stringify(previous);
+run('state=null;restore();startScreen()');assert.equal(run('state.done'),true);assert.equal(run('state.index'),44);
+assert.deepEqual(JSON.parse(run('JSON.stringify(state.orderings["t2-match"].slice().sort())')),['Jane','Mike','Sara']);
+console.log('PASS: 45 sequential steps; previous answers locked; complete-only result/PDF; resume and bank migration without restart; 14 Heart WAVs.');

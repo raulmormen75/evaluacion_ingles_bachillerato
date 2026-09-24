@@ -13,12 +13,20 @@ source = (root / 'questions.js').read_text(encoding='utf-8')
 questions = json.loads(source.split('window.QUESTIONS = ', 1)[1].strip().removesuffix(';'))
 jobs = [('test', 'Hello. This is your English audio test.')]
 jobs += [(q['id'], q['audio']) for q in questions if q.get('audio')]
+jobs += [(clip['id'], clip['text']) for q in questions for clip in q.get('audioPairs', [])]
 out = root / 'assets' / 'audio'
 out.mkdir(parents=True, exist_ok=True)
 manifest = {'voice': 'af_heart', 'language': 'en-us', 'model': 'Kokoro v1.0', 'clips': []}
 for name, text in jobs:
     # Explicit letter-name phonemes prevent initials being read as abbreviations.
-    letters = {'t2-dictation': ['bˈiː', 'ˈiː', 'dˈiː'], 't2-listening': ['ˈiː', 'vˈiː', 'ˈeɪ']}
+    letters = {'t2-dictation': ['bˈiː', 'ˈiː', 'dˈiː'], 't2-listening': ['ˈiː', 'vˈiː', 'ˈeɪ'],
+               't2-match-1': ['dʒˈeɪ', 'ˈeɪ', 'ˈɛn', 'ˈiː'],
+               't2-match-2': ['ˈɛs', 'ˈeɪ', 'ˈɑːɹ', 'ˈeɪ'],
+               't2-match-3': ['ˈɛm', 'ˈaɪ', 'kˈeɪ', 'ˈiː']}
+    if (out / (name + '.wav')).exists():
+        info = sf.info(out / (name + '.wav'))
+        manifest['clips'].append({'id': name, 'text': text, 'seconds': round(info.duration, 3)})
+        continue
     if name in letters:
         parts = []
         for phonemes in letters[name]:

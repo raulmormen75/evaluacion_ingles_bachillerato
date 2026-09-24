@@ -34,4 +34,12 @@ const age=questions.find(q=>q.id==='t4-short');
 for(const answer of ['He’s twenty years old.', 'Luis is 20.'])assert.equal(scoring.grade(age,answer),1);
 for(const answer of ['I am twenty','He is twelve'])assert.equal(scoring.grade(age,answer),0);
 assert(questions.every(q=>!q.prompt.includes('Tu personaje')));
+const spelling=questions.find(q=>q.id==='t2-match');
+assert.equal(scoring.grade(spelling,{0:'Jane',1:'Sara',2:'Mike'}),1);
+assert.equal(scoring.grade(spelling,{0:'Jean',1:'Sarah',2:'Nick'}),0);
+assert.equal(scoring.grade(spelling,{0:'Jane',1:'Sarah',2:'Mike'}),2/3);
+spelling.audioPairs.forEach((clip,i)=>assert(clip.choices.includes(spelling.pairs[i][1])));
+for(const [id,good,bad] of [['t2-short','name new nice','name nice new'],['t3-fill','student','studant'],['t4-choice','13 y 30','30 y 13']]){
+ const item=questions.find(q=>q.id===id);assert.equal(scoring.grade(item,good),1);assert.equal(scoring.grade(item,bad),0);
+}
 console.log('PASS: 45 questions, nine formats per topic, correct/blank answers, contractions and partial credit.');
