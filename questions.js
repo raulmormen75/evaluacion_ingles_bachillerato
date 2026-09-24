@@ -417,11 +417,11 @@ window.QUESTIONS = [
     "id": "t3-short",
     "topic": 3,
     "type": "short",
-    "prompt": "¿Qué letra representa el sonido inicial de «house»? Escribe solamente la letra.",
-    "explain": "House empieza con h y su sonido inicial es audible.",
+    "prompt": "¿Qué palabra empieza con el mismo sonido que «chair»: «school», «cheese» o «house»? Escribe la palabra.",
+    "explain": "Chair y cheese empiezan con el sonido /tʃ/. School empieza con /sk/ y house con /h/.",
     "tag": "Sonido inicial",
     "answers": [
-      "h"
+      "cheese"
     ]
   },
   {
