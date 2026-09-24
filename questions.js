@@ -365,16 +365,16 @@ window.QUESTIONS = [
     "id": "t3-listening",
     "topic": 3,
     "type": "listening",
-    "prompt": "Escucha y selecciona la palabra que se dijo.",
-    "explain": "La palabra que se escucha es music, que significa música.",
-    "tag": "Reconocimiento auditivo",
-    "audio": "Music.",
+    "prompt": "Escucha. ¿Qué le gusta a la persona que habla?",
+    "explain": "La persona dice que le gusta la música; a su hermana le gustan las películas.",
+    "tag": "Comprensión auditiva",
+    "audio": "I like music, but my sister likes movies.",
     "choices": [
-      "Mexico",
-      "music",
-      "morning"
+      "Music",
+      "Movies",
+      "Sports"
     ],
-    "answer": "music"
+    "answer": "Music"
   },
   {
     "id": "t3-order",

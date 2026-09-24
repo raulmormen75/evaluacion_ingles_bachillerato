@@ -70,3 +70,8 @@ for(const id of ['t2-dictation','t2-short','t3-fill']){
  assert.equal(scoring.grade(item,[...words,'extra'].join(', ')),0,id+' extra word');
 }
 console.log('PASS: all written word lists accept spaces and commas while checking order and completeness.');
+
+const musicSentence=questions.find(q=>q.id==='t3-listening');
+assert.equal(musicSentence.audio,'I like music, but my sister likes movies.');
+assert.equal(scoring.grade(musicSentence,'Music'),1);
+for(const wrong of ['Movies','Sports'])assert.equal(scoring.grade(musicSentence,wrong),0);
