@@ -101,7 +101,9 @@ window.QUESTIONS = [
     "answers": [
       "Good morning",
       "Good morning Eva",
-      "Good morning, Eva"
+      "Good morning, Eva",
+      "¡Good morning!",
+      "¡Good morning, Eva!"
     ]
   },
   {
