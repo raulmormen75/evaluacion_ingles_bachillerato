@@ -31,3 +31,19 @@ run('state=null;restore();startScreen()');assert.equal(run('state.done'),true);a
 assert.deepEqual(JSON.parse(run('JSON.stringify(state.orderings["t2-match"].slice().sort())')),['I have thirty books.','I would like to travel.','My sister is a student.']);
 node('restartTop').onclick();assert.equal(run('state'),null);assert.equal(stored,null);assert(node('app').innerHTML.includes('startForm'));
 console.log('PASS: 45 sequential steps; previous answers locked; complete-only result/PDF/restart; resume and bank migration; 14 Heart WAVs.');
+
+// A controlled random source verifies that topic order is shuffled, too.
+c.crypto={getRandomValues(values){values.fill(0);return values;}};
+node('name').value='Prueba de orden';node('group').value='Tercer cuatrimestre';
+node('startForm').onsubmit({preventDefault(){}});
+const freshIds=JSON.parse(run('JSON.stringify(state.ids)'));
+assert.equal(freshIds.length,45);assert.equal(new Set(freshIds).size,45);
+const topicSequence=JSON.parse(run('JSON.stringify(qs().map(q=>q.topic))'));
+const blocks=Array.from({length:5},(_,i)=>topicSequence.slice(i*9,i*9+9));
+assert(blocks.every(block=>new Set(block).size===1));
+assert.notDeepEqual(blocks.map(block=>block[0]),[1,2,3,4,5]);
+assert.deepEqual(blocks.map(block=>block[0]).sort(),[1,2,3,4,5]);
+run('state=null;restore();startScreen()');
+assert.deepEqual(JSON.parse(run('JSON.stringify(state.ids)')),freshIds);
+assert.equal(run('state.index'),0);
+console.log('PASS: new attempts shuffle topics and all 45 unique exercises; reload preserves order.');
