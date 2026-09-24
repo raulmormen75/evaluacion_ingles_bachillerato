@@ -27,6 +27,19 @@ assert.equal(scoring.grade(q,'I from Mexico'),0);
 const m=questions.find(q=>q.type==='match');
 assert.equal(scoring.grade(m,{0:m.pairs[0][1]}),1/m.pairs.length);
 assert.equal(scoring.equivalent("I'm",'I am'),false,'Only explicitly approved contractions');
+// Mexican keyboard acute accent is accepted as an apostrophe within contractions.
+for(const item of questions.filter(q=>q.answers&&!q.tokens)){
+ for(const answer of item.answers.filter(a=>a.includes("'"))){
+  const acute=answer.replace(/'/g,'´');
+  assert.equal(scoring.grade(item,acute),1,item.id+' acute accent');
+  assert.equal(scoring.grade(item,acute.toLowerCase()),1,item.id+' lowercase acute accent');
+ }
+}
+const nameQuestion=questions.find(q=>q.id==='t1-correction');
+assert.equal(scoring.grade(nameQuestion,'What´s your name?'),1);
+assert.equal(scoring.grade(nameQuestion,'What´s you name?'),0);
+assert.equal(scoring.grade(nameQuestion,'Whats your name?'),0);
+assert.equal(scoring.equivalent('réad','read'),false,'Do not strip accents from letters');
 const greeting=questions.find(q=>q.id==='t1-short');
 for(const answer of ['Good morning', 'Good morning!', 'Good morning, Eva', 'Good morning, Eva!', '¡Good morning!', '¡Good morning, Eva!'])assert.equal(scoring.grade(greeting,answer),1);
 for(const answer of ['My name is Eva','Good night','¡Good night!','¡Good mourning!'])assert.equal(scoring.grade(greeting,answer),0);
