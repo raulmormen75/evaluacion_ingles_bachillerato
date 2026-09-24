@@ -20,12 +20,14 @@ node('finish').onclick();assert.equal(run('view'),'results');assert.equal(run('t
 const answers=run('JSON.stringify(state.answers)');run('setAnswer(qs()[44],"changed");go(0);startScreen()');assert.equal(run('view'),'results');assert.equal(run('JSON.stringify(state.answers)'),answers);
 assert(!/Folio|id="print"|question-grid/.test(node('app').innerHTML));
 assert(node('app').innerHTML.includes('id="restart"'));
+assert(node('app').innerHTML.indexOf('id="restartTop"') < node('app').innerHTML.indexOf('Detalle de tus respuestas'));
+assert.equal(typeof node('restartTop').onclick,'function');
 run('state=null;restore();startScreen()');assert.equal(run('state.done'),true);assert.equal(run('view'),'results');
 const manifest=JSON.parse(fs.readFileSync(path.join(root,'assets/audio/manifest.json'),'utf8'));
 assert.equal(manifest.voice,'af_heart');assert.equal(manifest.clips.length,14);
 for(const clip of manifest.clips){const data=fs.readFileSync(path.join(root,'assets/audio',clip.id+'.wav'));assert.equal(data.toString('ascii',0,4),'RIFF');assert(clip.seconds>0.5);}
 const previous=JSON.parse(stored);previous.orderings['t2-match']=['b','g','j'];stored=JSON.stringify(previous);
 run('state=null;restore();startScreen()');assert.equal(run('state.done'),true);assert.equal(run('state.index'),44);
-assert.deepEqual(JSON.parse(run('JSON.stringify(state.orderings["t2-match"].slice().sort())')),['Jane','Mike','Sara']);
-run('restartEvaluation()');assert.equal(run('state'),null);assert.equal(stored,null);assert(node('app').innerHTML.includes('startForm'));
+assert.deepEqual(JSON.parse(run('JSON.stringify(state.orderings["t2-match"].slice().sort())')),['I have thirty books.','I would like to travel.','My sister is a student.']);
+node('restartTop').onclick();assert.equal(run('state'),null);assert.equal(stored,null);assert(node('app').innerHTML.includes('startForm'));
 console.log('PASS: 45 sequential steps; previous answers locked; complete-only result/PDF/restart; resume and bank migration; 14 Heart WAVs.');

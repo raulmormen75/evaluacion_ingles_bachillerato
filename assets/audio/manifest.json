@@ -60,18 +60,18 @@
     },
     {
       "id": "t2-match-1",
-      "text": "J. A. N. E.",
-      "seconds": 7.155
+      "text": "My sister is a student.",
+      "seconds": 2.121
     },
     {
       "id": "t2-match-2",
-      "text": "S. A. R. A.",
-      "seconds": 7.155
+      "text": "I have thirty books.",
+      "seconds": 1.897
     },
     {
       "id": "t2-match-3",
-      "text": "M. I. K. E.",
-      "seconds": 7.197
+      "text": "I would like to travel.",
+      "seconds": 2.003
     }
   ]
 }

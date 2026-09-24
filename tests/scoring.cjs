@@ -43,10 +43,11 @@ assert.equal(scoring.grade(schoolListening,'A backpack'),0);
 for(const answer of ['apple book dog','Apple, book, dog.','apple\nbook\ndog'])assert.equal(scoring.grade(wordDictation,answer),1);
 for(const answer of ['dog apple book','apple book','pencil'])assert.equal(scoring.grade(wordDictation,answer),0);
 assert.equal(scoring.grade(wordDictation,'BED'),0);
-assert.equal(scoring.grade(spelling,{0:'Jane',1:'Sara',2:'Mike'}),1);
-assert.equal(scoring.grade(spelling,{0:'Jean',1:'Sarah',2:'Nick'}),0);
-assert.equal(scoring.grade(spelling,{0:'Jane',1:'Sarah',2:'Mike'}),2/3);
+assert.equal(scoring.grade(spelling,{0:'My sister is a student.',1:'I have thirty books.',2:'I would like to travel.'}),1);
+assert.equal(scoring.grade(spelling,{0:'My brother is a student.',1:'I have thirteen books.',2:'I like to travel.'}),0);
+assert.equal(scoring.grade(spelling,{0:'My sister is a student.',1:'I have forty books.',2:'I would like to travel.'}),2/3);
 spelling.audioPairs.forEach((clip,i)=>assert(clip.choices.includes(spelling.pairs[i][1])));
+spelling.audioPairs.forEach((clip,i)=>assert.equal(clip.text,spelling.pairs[i][1]));
 for(const [id,good,bad] of [['t2-short','name new nice','name nice new'],['t3-fill','thirteen, forty, eighteen','thirteen fourty eighteen'],['t4-choice','13 y 30','30 y 13']]){
  const item=questions.find(q=>q.id===id);assert.equal(scoring.grade(item,good),1);assert.equal(scoring.grade(item,bad),0);
 }

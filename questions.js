@@ -221,49 +221,49 @@ window.QUESTIONS = [
     "id": "t2-match",
     "topic": 2,
     "type": "match",
-    "prompt": "Escucha cada deletreo y selecciona el nombre correcto.",
-    "explain": "J-A-N-E forma Jane; S-A-R-A forma Sara; M-I-K-E forma Mike.",
-    "tag": "Deletreo de nombres",
+    "prompt": "Escucha cada audio y selecciona la oración que se dice.",
+    "explain": "Las oraciones son: My sister is a student; I have thirty books; I would like to travel.",
+    "tag": "Reconocimiento de oraciones",
     "pairs": [
       [
         "Audio 1",
-        "Jane"
+        "My sister is a student."
       ],
       [
         "Audio 2",
-        "Sara"
+        "I have thirty books."
       ],
       [
         "Audio 3",
-        "Mike"
+        "I would like to travel."
       ]
     ],
     "audioPairs": [
       {
         "id": "t2-match-1",
-        "text": "J. A. N. E.",
+        "text": "My sister is a student.",
         "choices": [
-          "Jane",
-          "Jean",
-          "June"
+          "My sister is a student.",
+          "My brother is a student.",
+          "My sister is a teacher."
         ]
       },
       {
         "id": "t2-match-2",
-        "text": "S. A. R. A.",
+        "text": "I have thirty books.",
         "choices": [
-          "Sara",
-          "Sarah",
-          "Zara"
+          "I have thirteen books.",
+          "I have thirty books.",
+          "I have forty books."
         ]
       },
       {
         "id": "t2-match-3",
-        "text": "M. I. K. E.",
+        "text": "I would like to travel.",
         "choices": [
-          "Mike",
-          "Mick",
-          "Nick"
+          "I would like to study.",
+          "I like to travel.",
+          "I would like to travel."
         ]
       }
     ]
