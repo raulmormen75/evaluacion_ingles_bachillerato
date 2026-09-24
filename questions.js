@@ -485,7 +485,7 @@ window.QUESTIONS = [
     "id": "t4-fill",
     "topic": 4,
     "type": "fill",
-    "prompt": "Ana tiene 17 años. Completa su frase con el número en inglés: I am ___ years old.",
+    "prompt": "Ana tiene 17 años. Completa la frase escribiendo el número con letras en inglés: I am ___ years old.",
     "explain": "Diecisiete se escribe seventeen.",
     "tag": "Edad y números",
     "answers": [
