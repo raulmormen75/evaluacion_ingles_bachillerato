@@ -28,3 +28,17 @@ Cuatrimestre obligatorio mediante desplegable: Sexto cuatrimestre o Tercer cuatr
 
 RESULTADO FINAL ACTUALIZADO
 Sin indicadores de progreso durante el intento. Porcentaje grande al entregar, botón PDF y detalle completo sin desplegables. Correctos verdes, incorrectos/parciales rojos con explicación y corrección. Verificados 45 resultados, respuesta equivocada, vacía, parcial y audio pendiente; generación PDF y revisión visual de sus páginas.
+
+
+ACTUALIZACIÓN VISUAL IFR · 24 de septiembre de 2026
+- Dirección elegida: conservar el flujo existente y refinar la presentación institucional; se descartó reconstruir la evaluación.
+- Escudo real reutilizado del material local IFR, guardado en assets/ifr-shield.jpg.
+- Plus Jakarta Sans, azules IFR, acento verde, formularios y controles adaptables.
+- Instrucciones reducidas y redactadas en tono directo de evaluación.
+- Acceso a los 45 ejercicios en un desplegable para liberar espacio en móvil. No se muestra progreso ni calificación anticipada.
+- No se modificaron questions.js ni scoring.js.
+- Pruebas existentes aprobadas: 45 ejercicios, nueve formatos por tema, respuestas correctas y vacías, contracciones y crédito parcial.
+- Navegador: registro obligatorio, selección de cuatrimestre, reanudación, selección de respuesta, escritura, orden de palabras, revisión y entrega. Resultado observado: 3/45 = 6.67%, con 45 detalles y sin errores de consola.
+- Escudo y fuente cargados. Vistas de escritorio y móvil revisadas, sin desbordamiento horizontal.
+- Botón PDF ejecutado sin errores y aviso de generación observado; archivo descargado no revisado visualmente en esta actualización.
+- Audio no reproducible en el navegador de prueba por ausencia de voces en-US. Aviso de incidencia comprobado. Android e iOS físicos pendientes.
