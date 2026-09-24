@@ -274,9 +274,10 @@ window.QUESTIONS = [
     "id": "t2-short",
     "topic": 2,
     "type": "short",
-    "prompt": "Escribe en orden alfabético las palabras «name», «nice» y «new», separadas por espacios.",
+    "prompt": "Escribe en orden alfabético las palabras «name», «nice» y «new», separadas por espacios o comas.",
     "explain": "Las palabras empiezan con n; sus segundas letras se ordenan a, e, i.",
     "tag": "Conocimiento del alfabeto",
+    "wordList": true,
     "answers": [
       "name new nice"
     ]
@@ -340,7 +341,7 @@ window.QUESTIONS = [
     "id": "t3-fill",
     "topic": 3,
     "type": "fill",
-    "prompt": "Complete the three numbers. Write the words in order, separated by commas: th_rt__n, f_rty, __ght__n.",
+    "prompt": "Complete the three numbers. Write the words in order, separated by spaces or commas: th_rt__n, f_rty, __ght__n.",
     "explain": "Los números completos, en el mismo orden, son thirteen, forty y eighteen.",
     "tag": "Vocales en palabras",
     "wordList": true,

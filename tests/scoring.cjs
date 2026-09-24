@@ -60,3 +60,13 @@ const largeNumber=questions.find(q=>q.id==='t4-correction');
 for(const answer of ['One million fourteen thousand nine hundred twenty-six.', 'one million, fourteen thousand, nine hundred and twenty six'])assert.equal(scoring.grade(largeNumber,answer),1);
 for(const answer of ['1014926','one million fourteen thousand nine hundred twenty five','fourteen thousand nine hundred twenty six'])assert.equal(scoring.grade(largeNumber,answer),0);
 console.log('PASS: 45 questions, nine exercises per topic, correct/blank answers, contractions and partial credit.');
+
+for(const id of ['t2-dictation','t2-short','t3-fill']){
+ const item=questions.find(q=>q.id===id);assert.equal(item.wordList,true);
+ const words=item.answers[0].split(' ');
+ for(const separator of [' ', ', ', ',', '  ', '\n', ' ,  '])assert.equal(scoring.grade(item,words.join(separator)),1,id+' separator '+JSON.stringify(separator));
+ assert.equal(scoring.grade(item,words.slice().reverse().join(', ')),0,id+' wrong order');
+ assert.equal(scoring.grade(item,words.slice(0,-1).join(', ')),0,id+' missing word');
+ assert.equal(scoring.grade(item,[...words,'extra'].join(', ')),0,id+' extra word');
+}
+console.log('PASS: all written word lists accept spaces and commas while checking order and completeness.');
