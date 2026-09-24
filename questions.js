@@ -175,12 +175,14 @@ window.QUESTIONS = [
     "id": "t2-dictation",
     "topic": 2,
     "type": "dictation",
-    "prompt": "Escucha y escribe la palabra en inglés.",
-    "explain": "Pencil significa lápiz y se escribe p-e-n-c-i-l.",
-    "tag": "Ortografía auditiva",
-    "audio": "Pencil.",
+    "prompt": "Escucha las tres palabras y escríbelas en orden alfabético, separadas por espacios o comas.",
+    "explain": "Las palabras son dog, apple y book. En orden alfabético: apple, book, dog.",
+    "tag": "Orden alfabético auditivo",
+    "audio": "Dog. Apple. Book.",
+    "audioWords": ["Dog", "Apple", "Book"],
+    "wordList": true,
     "answers": [
-      "pencil"
+      "apple book dog"
     ]
   },
   {

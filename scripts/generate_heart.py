@@ -30,7 +30,16 @@ for name, text in jobs:
         info = sf.info(out / (name + '.wav'))
         manifest['clips'].append({'id': name, 'text': text, 'seconds': round(info.duration, 3)})
         continue
-    if name in letters:
+    word_sequence = next((q.get('audioWords') for q in questions if q['id'] == name), None)
+    if word_sequence:
+        parts = []
+        for index, word in enumerate(word_sequence):
+            samples, rate = engine.create(word + '.', voice='af_heart', speed=0.9, lang='en-us')
+            parts.append(samples)
+            if index < len(word_sequence) - 1:
+                parts.append(np.zeros(rate, dtype=np.float32))
+        samples = np.concatenate(parts)
+    elif name in letters:
         parts = []
         for index, phonemes in enumerate(letters[name]):
             # A sentence ending gives each isolated letter its own completed intonation.

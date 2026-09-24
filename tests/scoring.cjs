@@ -36,7 +36,8 @@ for(const answer of ['I am twenty','He is twelve'])assert.equal(scoring.grade(ag
 assert(questions.every(q=>!q.prompt.includes('Tu personaje')));
 const spelling=questions.find(q=>q.id==='t2-match');
 const wordDictation=questions.find(q=>q.id==='t2-dictation');
-assert.equal(scoring.grade(wordDictation,'Pencil.'),1);
+for(const answer of ['apple book dog','Apple, book, dog.','apple\nbook\ndog'])assert.equal(scoring.grade(wordDictation,answer),1);
+for(const answer of ['dog apple book','apple book','pencil'])assert.equal(scoring.grade(wordDictation,answer),0);
 assert.equal(scoring.grade(wordDictation,'BED'),0);
 assert.equal(scoring.grade(spelling,{0:'Jane',1:'Sara',2:'Mike'}),1);
 assert.equal(scoring.grade(spelling,{0:'Jean',1:'Sarah',2:'Nick'}),0);
