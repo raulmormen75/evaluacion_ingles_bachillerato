@@ -57,7 +57,7 @@ assert.equal(scoring.grade(numberWords,'thirteen forty eighteen'),1);
 assert.equal(scoring.grade(numberWords,'thirteen forty'),0);
 assert.equal(scoring.grade(numberWords,'eighteen forty thirteen'),0);
 const largeNumber=questions.find(q=>q.id==='t4-correction');
-for(const answer of ['One million fourteen thousand nine hundred twenty-six.', 'one million, fourteen thousand, nine hundred and twenty six'])assert.equal(scoring.grade(largeNumber,answer),1);
+for(const answer of ['One million fourteen thousand nine hundred twenty-six.', 'one million, fourteen thousand, nine hundred and twenty-six', 'one million fourteen thousand nine hundred twenty-six'])assert.equal(scoring.grade(largeNumber,answer),1);
 for(const answer of ['1014926','one million fourteen thousand nine hundred twenty five','fourteen thousand nine hundred twenty six'])assert.equal(scoring.grade(largeNumber,answer),0);
 console.log('PASS: 45 questions, nine exercises per topic, correct/blank answers, contractions and partial credit.');
 
@@ -75,3 +75,9 @@ const musicSentence=questions.find(q=>q.id==='t3-listening');
 assert.equal(musicSentence.audio,'Ana likes music, but Laura likes movies.');
 assert.equal(scoring.grade(musicSentence,'Music'),1);
 for(const wrong of ['Movies','Sports'])assert.equal(scoring.grade(musicSentence,wrong),0);
+
+for(const ending of ['twenty six','twentysix','twenty--six','twenty - six','twenty–six']){
+ assert.equal(scoring.grade(largeNumber,'one million fourteen thousand nine hundred '+ending),0);
+}
+assert.equal(scoring.grade(largeNumber,'one million fourteen thousand nine hundred and twenty six'),0);
+console.log('PASS: twenty-six requires a hyphen; lowercase and optional and remain valid.');

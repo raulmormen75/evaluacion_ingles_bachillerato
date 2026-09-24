@@ -591,8 +591,9 @@ window.QUESTIONS = [
     "explain": "1,014,926 se escribe one million fourteen thousand nine hundred twenty-six. También se acepta and antes de twenty-six.",
     "tag": "Escritura de números",
     "numberWords": true,
+    "requiredHyphen": "twenty-six",
     "answers": [
-      "one million fourteen thousand nine hundred twenty six"
+      "one million fourteen thousand nine hundred twenty-six"
     ]
   },
   {

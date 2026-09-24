@@ -4,7 +4,7 @@
 function normalize(value){return String(value??'').normalize('NFKC').replace(/[’‘]/g,"'").toLowerCase().trim().replace(/[.!?]+$/g,'').replace(/\s+/g,' ').trim();}
 function equivalent(a,b){return normalize(a)===normalize(b);}
 function grade(q,value){
- if(q.numberWords){const clean=x=>normalize(x).replace(/[-,]/g,' ').replace(/\band\b/g,' ').replace(/\s+/g,' ').trim();return q.answers.some(x=>clean(value)===clean(x))?1:0;}
+ if(q.numberWords){if(q.requiredHyphen&&!normalize(value).includes(q.requiredHyphen))return 0;const clean=x=>normalize(x).replace(/[-,]/g,' ').replace(/\band\b/g,' ').replace(/\s+/g,' ').trim();return q.answers.some(x=>clean(value)===clean(x))?1:0;}
  if(q.wordList){const words=normalize(value).replace(/,/g,' ').replace(/\s+/g,' ').trim();return q.answers.some(x=>words===normalize(x))?1:0;}
  if(q.type==='match'){const a=value||{};return q.pairs.reduce((s,p,i)=>s+(a[i]===p[1]?1:0),0)/q.pairs.length;}
  if(q.type==='classify'){const a=value||{};return q.items.reduce((s,p,i)=>s+(a[i]===p.category?1:0),0)/q.items.length;}
