@@ -43,6 +43,12 @@ button:disabled{opacity:1;color:#7d8295;background:#edf0f5;border-color:#edf0f5;
 .audio-box .row{margin-top:0!important}
 .audio-box .row button{flex:1 1 auto;font-size:12px;padding:11px 12px}
 .audio-box button:not(.primary){background:#fff;border-color:#dce0eb}
+#testAudio{position:relative;isolation:isolate}
+#testAudio.is-playing{border-color:var(--accent);box-shadow:0 0 0 1px #2ce51e25}
+#testAudio.is-playing::before,#testAudio.is-playing::after{content:"";position:absolute;inset:-1px;border:1px solid var(--accent);border-radius:inherit;pointer-events:none;opacity:0;animation:audio-border-wave 1.6s ease-out infinite}
+#testAudio.is-playing::after{animation-delay:.8s}
+@keyframes audio-border-wave{0%{opacity:.5;transform:scale(1)}100%{opacity:0;transform:scale(1.09,1.35)}}
+@media(prefers-reduced-motion:reduce){#testAudio.is-playing::before,#testAudio.is-playing::after{animation:none}#testAudio.is-playing{box-shadow:0 0 6px #2ce51e45}}
 .audio-box label{font-size:12px}
 .audio-box small{font-size:12px;line-height:1.6}
 .audio-status{display:block;font-size:12px;color:var(--muted);margin-top:9px}
