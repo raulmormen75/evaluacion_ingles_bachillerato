@@ -22,7 +22,9 @@ Prueba de calificación: `node tests/scoring.cjs`.
 
 ## Audio y dispositivos
 
-Usa las voces de inglés estadounidense disponibles mediante `speechSynthesis`, sin micrófono. Prioriza nombres de voces femeninas conocidas. El navegador no informa consistentemente el género: hay que escuchar y confirmar la selección. No se garantiza la misma voz ni disponibilidad en todos los celulares. Una incidencia de audio queda pendiente de revisión docente.
+Voz sintética femenina estadounidense Heart (`af_heart`), generada localmente con Kokoro v1.0 y kokoro-onnx 0.6.1. Los once WAV se sirven desde `assets/audio`: diez ejercicios y una prueba. No hay API de pago, claves ni dependencia de voces instaladas. Los botones permiten reproducir, escuchar a 0.5x y detener; la reproducción comienza con una interacción del alumno.
+
+Fuentes: https://huggingface.co/hexgrad/Kokoro-82M (modelo Apache 2.0), https://github.com/thewh1teagle/kokoro-onnx (herramienta MIT). El modelo y las dependencias de generación no se distribuyen con el sitio. `scripts/generate_heart.py` permite regenerar los WAV proporcionando una carpeta con `kokoro-v1.0.onnx` y `voices-v1.0.bin`. Entorno local: `kokoro-onnx==0.6.1`, `soundfile==0.14.0`. Los nombres de las letras se generan por separado con pausas.
 
 ## Datos y evaluación individual
 
@@ -30,11 +32,13 @@ Respuestas y datos se guardan en el navegador del alumno. No hay cuentas, panel 
 
 ## Vercel
 
-Preparada para importarse como sitio estático: Framework Preset **Other**, sin Build Command, Output Directory **.**. `vercel.json` incluye la configuración. **No publicar para alumnos todavía:** quedan ajustes solicitados por el profesor y validación real en Android/iOS.
+Preparada para importarse como sitio estático: Framework Preset **Other**, sin Build Command, Output Directory **.**. `vercel.json` incluye la configuración. Reproducción y diseño comprobados en navegador; la prueba física en Android/iOS sigue pendiente.
 
 ## Entrega y retroalimentación
 
 Durante la evaluación no se muestran indicadores de progreso, calificación ni correcciones. Tras entregar aparece la calificación en porcentaje, la descarga PDF y los 45 ejercicios completos. Los correctos aparecen en verde; los incorrectos y parciales, en rojo con explicación y corrección. Los audios con incidencia quedan pendientes de revisión docente.
 
 ## Navegación de la prueba
-Iniciar prueba abre el primer ejercicio. El alumno avanza con Siguiente hasta el ejercicio 45, finaliza y entrega. No hay cuadrícula, acceso por tema ni saltos a ejercicios. No se genera ni se muestra folio en resultados o PDF.
+Iniciar prueba abre el primer ejercicio. Siguiente se habilita cuando la respuesta está completa; al avanzar se bloquea la anterior. El ejercicio 45 conduce a la entrega. No hay reinicio, retroceso, cuadrícula ni acceso por tema. Recargar conserva el intento y el ejercicio pendiente. Solo se obtiene resultado/PDF al completar y entregar los 45. No se genera ni se muestra folio. La permanencia del intento depende del almacenamiento del navegador; no hay identificación en servidor.
+
+Pruebas del flujo y audios: `node tests/flow.cjs`.

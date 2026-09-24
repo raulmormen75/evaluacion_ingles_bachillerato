@@ -1,0 +1,62 @@
+{
+  "voice": "af_heart",
+  "language": "en-us",
+  "model": "Kokoro v1.0",
+  "clips": [
+    {
+      "id": "test",
+      "text": "Hello. This is your English audio test.",
+      "seconds": 3.171
+    },
+    {
+      "id": "t1-dictation",
+      "text": "Nice to meet you.",
+      "seconds": 1.791
+    },
+    {
+      "id": "t1-listening",
+      "text": "Hello. My name is Ana. I am from Mexico.",
+      "seconds": 3.699
+    },
+    {
+      "id": "t2-dictation",
+      "text": "B. E. D.",
+      "seconds": 4.246
+    },
+    {
+      "id": "t2-listening",
+      "text": "E. V. A.",
+      "seconds": 4.118
+    },
+    {
+      "id": "t3-dictation",
+      "text": "Bus.",
+      "seconds": 1.296
+    },
+    {
+      "id": "t3-listening",
+      "text": "Sheep.",
+      "seconds": 1.252
+    },
+    {
+      "id": "t4-dictation",
+      "text": "Fifty.",
+      "seconds": 1.36
+    },
+    {
+      "id": "t4-listening",
+      "text": "My name is Sara. I am eighteen years old.",
+      "seconds": 3.272
+    },
+    {
+      "id": "t5-dictation",
+      "text": "I am from Mexico.",
+      "seconds": 2.005
+    },
+    {
+      "id": "t5-listening",
+      "text": "I plan to study English next year.",
+      "seconds": 2.655
+    }
+  ]
+}
